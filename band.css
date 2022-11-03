@@ -1,0 +1,21 @@
+.container {
+    max-width: 960px;
+    color : rgb(5, 1, 121);
+
+  }
+  .btn{    color : rgb(255, 255, 255);   
+    background-color: rgb(23, 1, 121);}
+
+  .border-top { border-top: 1px solid #e5e5e5; }
+  .border-bottom { border-bottom: 1px solid #e5e5e5; }
+  .border-top-gray { border-top-color: #adb5bd; }
+  
+  .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+  
+  .lh-condensed { line-height: 1.25; }
+  body {
+    background-color: rgb(244, 245, 247);
+  }
+
+  
+  
