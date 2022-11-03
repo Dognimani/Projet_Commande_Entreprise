@@ -22,74 +22,86 @@
           <h2>Checkout form</h2>
         </div>
   
+        <div class="card card-primary card-outline">
+          <div class="card-header">
+            <h3 class="card-title m-0">Component identification</h3>
+          </div>
+          <div class="card-body">
+            <div class="row  mt-4 mb-2">
+                  <div class="col-md-4 mb-3">
+                      <label for="Name">Name</label>
+                      <input type="text" class="form-control" id="Name" placeholder="Name" value="" required>
+                      <div class="invalid-feedback">
+                        Name is required.
+                      </div>
+                  </div>
+                    
+                  <div class="col-md-4 mb-3">
+                    <label for="Canonical Formula">Canonical Formula</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control" id="Canonical Formula" placeholder="Canonical Formula" required>
+                      <div class="invalid-feedback" style="width: 100%;">
+                        Your Canonical Formula is required.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 mb-3">
+                    <label for="cas">CAS Number</label>
+                    <input type="cas" class="form-control" id="cas" placeholder="cas number" required>
+                    <div class="invalid-feedback" style="width: 100%;">
+                        Your cas number is required.
+                      </div>
+                  </div>
+            </div>
+          </div>
+        </div>
         
-          <div class="col-md-8 order-md-1">
-            <h4 class="mb-3">Component identification</h4>
-            <form class="needs-validation" novalidate>
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <label for="Name">Name</label>
-                  <input type="text" class="form-control" id="Name" placeholder="Name" value="" required>
-                  <div class="invalid-feedback">
-                    Name is required.
+        
+        <div class="card card-primary card-outline mt-5">
+          <div class="card-header">
+            <h3 class="card-title m-0">Chemical Properties</h3>
+          </div>
+          <div class="card-body">
+
+            <!--deuxième ligne -->
+            <div class="row  mt-4 mb-2">
+                  <div class="col-md-4 mb-3">
+                      <label for="Molecular Weight">Molecular Weight</label>
+                      <input type="text" class="form-control" id="Molecular Weight" placeholder="Molecular Weight" required>
+                      <div class="invalid-feedback">
+                        Please enter the Molecular Weight.
+                      </div>
                   </div>
-                </div>
-                
-              </div>
-  
-              <div class="mb-3">
-                <label for="Canonical Formula">Canonical Formula</label>
-                <div class="input-group">
-                  <input type="text" class="form-control" id="Canonical Formula" placeholder="Canonical Formula" required>
-                  <div class="invalid-feedback" style="width: 100%;">
-                    Your Canonical Formula is required.
+                    
+                  <div class="col-md-4 mb-3">
+                    <label for="XLogP3">XLogP3</label>
+                    <input type="text" class="form-control" id="XLogP3" placeholder="XLogP3" required>
+                    <div class="invalid-feedback">
+                       Please enter XLogP3.
+                    </div>
                   </div>
-                </div>
-              </div>
-  
-              <div class="mb-3">
-                <label for="cas">CAS Number</label>
-                <input type="cas" class="form-control" id="cas" placeholder="cas number" required>
-                <div class="invalid-feedback" style="width: 100%;">
-                    Your cas number is required.
+
+                  <div class="col-md-4 mb-3">
+                      <label for="Hydrogen Bond Donor Count">Hydrogen Bond Donor Count</label>
+                      <input type="text" class="form-control" id="Hydrogen Bond Donor Count" placeholder="Hydrogen Bond Donor Count" required>
+                      <div class="invalid-feedback">
+                        Please enter Hydrogen Bond Donor Count.
+                      </div>
                   </div>
-              </div>
-
-              <h4 class="mb-3">Physical and Chemical Properties</h4>
-
-              <div class="mb-3">
-                <label for="Molecular Weight">Molecular Weight</label>
-                <input type="text" class="form-control" id="Molecular Weight" placeholder="Molecular Weight" required>
-                <div class="invalid-feedback">
-                  Please enter the Molecular Weight.
-                </div>
-              </div>
-
-              <div class="mb-3">
-                <label for="XLogP3">XLogP3</label>
-                <input type="text" class="form-control" id="XLogP3" placeholder="XLogP3" required>
-                <div class="invalid-feedback">
-                  Please enter XLogP3.
-                </div>
-              </div>
-
-              <div class="mb-3">
-                <label for="Hydrogen Bond Donor Count">Hydrogen Bond Donor Count</label>
-                <input type="text" class="form-control" id="Hydrogen Bond Donor Count" placeholder="Hydrogen Bond Donor Count" required>
-                <div class="invalid-feedback">
-                  Please enter Hydrogen Bond Donor Count.
-                </div>
-              </div>
-
-              <div class="mb-3">
+            </div>
+            
+            <!--deuxième ligne -->
+            <div class="row  mt-4 mb-2">
+              <div class="col-md-4 mb-3">
                 <label for="Hydrogen Bond Acceptor Count">Hydrogen Bond Acceptor Count</label>
                 <input type="text" class="form-control" id="Hydrogen Bond Acceptor Count" placeholder="Hydrogen Bond Acceptor Count" required>
                 <div class="invalid-feedback">
                   Please enter Hydrogen Bond Acceptor Count.
                 </div>
               </div>
-
-              <div class="mb-3">
+                
+              <div class="col-md-4 mb-3">
                 <label for="Rotatable Bond Count">Rotatable Bond Count</label>
                 <input type="text" class="form-control" id="Rotatable Bond Count" placeholder="Rotatable Bond Count" required>
                 <div class="invalid-feedback">
@@ -97,23 +109,26 @@
                 </div>
               </div>
 
-              <div class="mb-3">
+              <div class="col-md-4 mb-3">
                 <label for="Exact Mass">Exact Mass</label>
                 <input type="text" class="form-control" id="Exact Mass" placeholder="Exact Mass" required>
                 <div class="invalid-feedback">
                   Please enter Exact Mass.
                 </div>
               </div>
-              
-              <div class="mb-3">
+            </div>
+
+            <!--troisième ligne -->
+            <div class="row  mt-4 mb-2">
+              <div class="col-md-4 mb-3">
                 <label for="Monoisotopic Mass">Monoisotopic Mass</label>
                 <input type="text" class="form-control" id="Monoisotopic Mass" placeholder="Monoisotopic Mass" required>
                 <div class="invalid-feedback">
                   Please enter Monoisotopic Mass.
                 </div>
               </div>
-
-              <div class="mb-3">
+                
+              <div class="col-md-4 mb-3">
                 <label for="Topological Polar Surface Area">Topological Polar Surface Area</label>
                 <input type="text" class="form-control" id="Topological Polar Surface Area" placeholder="Topological Polar Surface Area" required>
                 <div class="invalid-feedback">
@@ -121,55 +136,60 @@
                 </div>
               </div>
 
-              <div class="mb-3">
+              <div class="col-md-4 mb-3">
                 <label for="Heavy Atom Count">Heavy Atom Count</label>
                 <input type="text" class="form-control" id="Heavy Atom Count" placeholder="Heavy Atom Count" required>
                 <div class="invalid-feedback">
                   Please enter Heavy Atom Count.
                 </div>
               </div>
+            </div>
 
-              <div class="mb-3">
-                <label for="Formal Charge">Formal Charge</label>
+            <!--quatrième ligne -->
+            <div class="row  mt-4 mb-2">
+              <div class="col-md-4 mb-3">
+              <label for="Formal Charge">Formal Charge</label>
                 <input type="text" class="form-control" id="Formal Charge" placeholder="Formal Charge" required>
                 <div class="invalid-feedback">
                   Please enter Formal Charge.
                 </div>
               </div>
-
-              <div class="mb-3">
+              
+              <div class="col-md-4 mb-3">
                 <label for="Complexity">Complexity</label>
                 <input type="text" class="form-control" id="Complexity" placeholder="Complexity" required>
                 <div class="invalid-feedback">
                   Please enter Complexity.
-                </div>
+                </div>ter Topological Polar Surface Area.
               </div>
 
-              <div class="mb-3">
+              <div class="col-md-4 mb-3">
                 <label for="Isotope Atom Count">Isotope Atom Count</label>
                 <input type="text" class="form-control" id="Isotope Atom Count" placeholder="Isotope Atom Count" required>
                 <div class="invalid-feedback">
                   Please enter Isotope Atom Count.
                 </div>
               </div>
-
-              <div class="mb-3">
-                <label for="Defined Atom Stereocenter Count">Defined Atom Stereocenter Count</label>
-                <input type="text" class="form-control" id="Defined Atom Stereocenter Count" placeholder="Defined Atom Stereocenter Count" required>
-                <div class="invalid-feedback">
-                  Please enter Defined Atom Stereocenter Count.
-                </div>
+            </div>
+            
+            <!--cinquième ligne -->
+            <div class="row  mt-4 mb-2">
+              <div class="col-md-4 mb-3">
+              <label for="Defined Atom Stereocenter Count">Defined Atom Stereocenter Count</label>
+              <input type="text" class="form-control" id="Defined Atom Stereocenter Count" placeholder="Defined Atom Stereocenter Count" required>
+              <div class="invalid-feedback">
+                Please enter Defined Atom Stereocenter Count.
               </div>
-
-              <div class="mb-3">
+              </div>
+              <div class="col-md-4 mb-3">
                 <label for="Undefined Atom Stereocenter Count">Undefined Atom Stereocenter Count</label>
                 <input type="text" class="form-control" id="Undefined Atom Stereocenter Count" placeholder="Undefined Atom Stereocenter Count" required>
                 <div class="invalid-feedback">
                   Please enter Undefined Atom Stereocenter Count.
                 </div>
-              </div>
+                </div>
 
-              <div class="mb-3">
+              <div class="col-md-4 mb-3">
                 <label for="Defined Bond Stereocenter Count">Defined Bond Stereocenter Count</label>
                 <input type="text" class="form-control" id="Defined Bond Stereocenter Count" placeholder="Defined Bond Stereocenter Count" required>
                 <div class="invalid-feedback">
@@ -177,44 +197,53 @@
                 </div>
               </div>
 
-              <div class="mb-3">
+
+            </div>
+
+
+            <!--sixième ligne -->
+            <div class="row  mt-4 mb-2">
+              <div class="col-md-4 mb-3">
                 <label for="Undefined Bond Stereocenter Count">Undefined Bond Stereocenter Count</label>
                 <input type="text" class="form-control" id="Undefined Bond Stereocenter Count" placeholder="Undefined Bond Stereocenter Count" required>
                 <div class="invalid-feedback">
                   Please enter Undefined Bond Stereocenter Count.
                 </div>
               </div>
+              <div class="col-md-4 mb-3">
+                <label for="Covalently-Bonded Unit Count">Covalently-Bonded Unit Count</label>
+                <input type="text" class="form-control" id="Covalently-Bonded Unit Count" placeholder="Covalently-Bonded Unit Count" required>
+                <div class="invalid-feedback">
+                  Please enter Covalently-Bonded Unit Count.
+                </div>
+                </div>
 
-              <div class="mb-3">
+              <div class="col-md-4 mb-3">
                 <label for="Covalently-Bonded Unit Count">Covalently-Bonded Unit Count</label>
                 <input type="text" class="form-control" id="Covalently-Bonded Unit Count" placeholder="Covalently-Bonded Unit Count" required>
                 <div class="invalid-feedback">
                   Please enter Covalently-Bonded Unit Count.
                 </div>
               </div>
-  
-              <div class="mb-3">
-                <label for="Covalently-Bonded Unit Count">Covalently-Bonded Unit Count</label>
-                <input type="text" class="form-control" id="Covalently-Bonded Unit Count" placeholder="Covalently-Bonded Unit Count" required>
-                <div class="invalid-feedback">
-                  Please enter Covalently-Bonded Unit Count.
-                </div>
+            </div>
+            <h4 class="mb-3">Compound Is Canonicalized</h4>
+            <div class="d-block my-3">
+              <div class="custom-control custom-radio">
+                <input id="yes" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                <label class="custom-control-label" for="yes">Yes</label>
               </div>
+              <div class="custom-control custom-radio">
+                <input id="no" name="paymentMethod" type="radio" class="custom-control-input" required>
+                <label class="custom-control-label" for="no">No</label>
+              </div>
+            </div>
+
+          </div>
+        </div>
 
             
   
-              <h4 class="mb-3">Compound Is Canonicalized</h4>
-  
-              <div class="d-block my-3">
-                <div class="custom-control custom-radio">
-                  <input id="yes" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-                  <label class="custom-control-label" for="yes">Yes</label>
-                </div>
-                <div class="custom-control custom-radio">
-                  <input id="no" name="paymentMethod" type="radio" class="custom-control-input" required>
-                  <label class="custom-control-label" for="no">No</label>
-                </div>
-              </div>
+
 
               <h4 class="mb-3">TOXICOLOGICAL PROFILE</h4>
               <div class="mb-3">
