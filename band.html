@@ -21,7 +21,9 @@
           <img class="d-block mx-auto mb-4" src="img/logo-IBSF.png" alt="" width="120" height="120">
           <h2>Checkout form</h2>
         </div>
-  
+      
+        <!-- Component identification section-->   
+
         <div class="card card-primary card-outline">
           <div class="card-header">
             <h3 class="card-title m-0">Component identification</h3>
@@ -57,7 +59,8 @@
           </div>
         </div>
         
-        
+        <!--Chemical Properties section-->   
+
         <div class="card card-primary card-outline mt-5">
           <div class="card-header">
             <h3 class="card-title m-0">Chemical Properties</h3>
@@ -242,159 +245,197 @@
         </div>
 
             
-  
+            <!--TOXICOLOGICAL PROFILE section -->
 
 
-              <h4 class="mb-3">TOXICOLOGICAL PROFILE</h4>
-              <div class="mb-3">
-                  <label for="Acute oral toxicity">Acute oral toxicity</label>
-                  <input type="text" class="form-control" id="Acute oral toxicity" name="Acute oral toxicity" placeholder="Write something.."  required >
+            <div class="card card-primary card-outline mt-5">
+              <div class="card-header">
+                <h3 class="card-title m-0">TOXICOLOGICAL PROFILE</h3>
+              </div>
+              <div class="card-body">
+    
+                <!--prémière ligne -->
+                <div class="row  mt-4 mb-2">
+                      <div class="col-md-4 mb-3">
+                        <label for="Acute oral toxicity">Acute oral toxicity</label>
+                        <input type="text" class="form-control" id="Acute oral toxicity" name="Acute oral toxicity" placeholder="Write something.."  required >
+                        <div class="invalid-feedback">
+                          Please enter something.
+                        </div>
+                      </div>
+                        
+                      <div class="col-md-4 mb-3">
+                        <label for="Acute dermal toxicity">Acute dermal toxicity</label>
+                        <input type="text" class="form-control" id="Acute dermal toxicity" name="Acute dermal toxicity" placeholder="Write something.."  required >
+                        <div class="invalid-feedback">
+                          Please enter something.
+                        </div>
+                      </div>
+    
+                      <div class="col-md-4 mb-3">
+                        <label for="Acute toxicity by other route">Acute toxicity by other route</label>
+                        <input type="text" class="form-control" id="Acute toxicity by other route" name="Acute toxicity by other route" placeholder="Write something.."  required >
+                        <div class="invalid-feedback">
+                          Please enter something.
+                        </div>  
+                      </div>
+                </div>
+
+                <!--deuxième ligne -->
+                <div class="row  mt-4 mb-2">
+                  <div class="col-md-4 mb-3">
+                    <label for="Skin irritation ">Skin irritation </label>
+                    <input type="text" class="form-control" id="Skin irritation " name="Skin irritation " placeholder="Write something.."  required >
+                    <div class="invalid-feedback">
+                      Please enter something.
+                    </div>
+                  </div>
+                    
+                  <div class="col-md-4 mb-3">
+                    <label for="Eye irritation ">Eye irritation </label>
+                    <input type="text" class="form-control" id="Eye irritation " name="Eye irritation " placeholder="Write something.."  required >
+                    <div class="invalid-feedback">
+                      Please enter something.
+                    </div>
+                  </div>
+    
+                  <div class="col-md-4 mb-3">
+                    <label for="Skin sensitisation  ">Skin sensitisation  </label>
+                    <input type="text" class="form-control" id="Skin sensitisation  " name="Skin sensitisation  " placeholder="Write something.."  required >
+                    <div class="invalid-feedback">
+                      Please enter something.
+                    </div>
+                  </div>
+                </div>
+
+                <!--troisième ligne -->
+                <div class="row  mt-4 mb-2">
+                  <div class="col-md-4 mb-3">
+                    <label for="Sub-chronic toxicity   ">Sub-chronic toxicity  </label>
+                    <input type="text" class="form-control" id="Sub-chronic toxicity   " name="Sub-chronic toxicity   " placeholder="Write something.."  required >
+                    <div class="invalid-feedback">
+                    Please enter something.
+                  </div>
+                </div> 
+
+                  <div class="col-md-4 mb-3">
+                    <label for="Ames test    ">Ames test  </label>
+                    <input type="text" class="form-control" id="Ames test  " name="Ames test   " placeholder="Write something.."  required >
+                    <div class="invalid-feedback">
+                    Please enter something.
+                  </div>
+                </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="MLA-TK    ">MLA-TK  </label>
+                  <input type="text" class="form-control" id="MLA-TK" name="MLA-TK  " placeholder="Write something.."  required >
                   <div class="invalid-feedback">
                     Please enter something.
-              </div>
-
-              <div class="mb-3">
-                <label for="Acute dermal toxicity">Acute dermal toxicity</label>
-                <input type="text" class="form-control" id="Acute dermal toxicity" name="Acute dermal toxicity" placeholder="Write something.."  required >
-                <div class="invalid-feedback">
-                  Please enter something.
-            </div>
-
-            <div class="mb-3">
-                <label for="Acute toxicity by other route">Acute toxicity by other route</label>
-                <input type="text" class="form-control" id="Acute toxicity by other route" name="Acute toxicity by other route" placeholder="Write something.."  required >
-                <div class="invalid-feedback">
-                  Please enter something.
-            </div>
-
-            <div class="mb-3">
-                <label for="Skin irritation ">Skin irritation </label>
-                <input type="text" class="form-control" id="Skin irritation " name="Skin irritation " placeholder="Write something.."  required >
-                <div class="invalid-feedback">
-                  Please enter something.
-            </div>
-
-            <div class="mb-3">
-                <label for="Eye irritation ">Eye irritation </label>
-                <input type="text" class="form-control" id="Eye irritation " name="Eye irritation " placeholder="Write something.."  required >
-                <div class="invalid-feedback">
-                  Please enter something.
-            </div>
-
-            <div class="mb-3">
-                <label for="Skin sensitisation  ">Skin sensitisation  </label>
-                <input type="text" class="form-control" id="Skin sensitisation  " name="Skin sensitisation  " placeholder="Write something.."  required >
-                <div class="invalid-feedback">
-                  Please enter something.
-            </div>
-
-            <div class="mb-3">
-                <label for="Sub-chronic toxicity   ">Sub-chronic toxicity  </label>
-                <input type="text" class="form-control" id="Sub-chronic toxicity   " name="Sub-chronic toxicity   " placeholder="Write something.."  required >
-                <div class="invalid-feedback">
-                  Please enter something.
-            </div>
-
-            <div class="mb-3">
-                <label for="Ames test    ">Ames test  </label>
-                <input type="text" class="form-control" id="Ames test  " name="Ames test   " placeholder="Write something.."  required >
-                <div class="invalid-feedback">
-                  Please enter something.
-            </div>
-
-            <div class="mb-3">
-                <label for="MLA-TK    ">MLA-TK  </label>
-                <input type="text" class="form-control" id="MLA-TK" name="MLA-TK  " placeholder="Write something.."  required >
-                <div class="invalid-feedback">
-                  Please enter something.
-            </div>
-
-            <div class="mb-3">
-                <label for="Micronucleus test     ">Micronucleus test  </label>
-                <input type="text" class="form-control" id="Micronucleus test " name="Micronucleus test " placeholder="Write something.."  required >
-                <div class="invalid-feedback">
-                  Please enter something.
-            </div>
-
-            <div class="mb-3">
-                <label for="Carcinogenicity    ">Carcinogenicity  </label>
-                <input type="text" class="form-control" id="Carcinogenicity " name="Carcinogenicity " placeholder="Write something.."  required >
-                <div class="invalid-feedback">
-                  Please enter something.
-            </div>
-
-            <div class="mb-3">
-                <label for="Reprotoxicity / teratogenicity    ">Reprotoxicity / teratogenicity  </label>
-                <input type="text" class="form-control" id="Reprotoxicity / teratogenicity " name="Reprotoxicity / teratogenicity " placeholder="Write something.."  required >
-                <div class="invalid-feedback">
-                  Please enter something.
-            </div>
-
-            <div class="mb-3">
-                <label for="Human data     ">Human data   </label>
-                <input type="text" class="form-control" id="Human data  " name="Human data  " placeholder="Write something.."  required >
-                <div class="invalid-feedback">
-                  Please enter something.
-            </div>
-
-            <div class="mb-3">
-                <label for="Toxicokinetics - Metabolism      ">Toxicokinetics - Metabolism   </label>
-                <input type="text" class="form-control" id="Toxicokinetics - Metabolism   " name="Toxicokinetics - Metabolism   " placeholder="Write something.."  required >
-                <div class="invalid-feedback">
-                  Please enter something.
-            </div>
-
-            <div class="mb-3">
-                <label for="Dermal/percutaneous absorption      ">Dermal/percutaneous absorption   </label>
-                <input type="text" class="form-control" id="Dermal/percutaneous absorption   " name="Dermal/percutaneous absorption    " placeholder="Write something.."  required >
-                <div class="invalid-feedback">
-                  Please enter something.
-            </div>
+                  </div>
+                </div>
+                </div>
 
 
-            <div class="mb-3">
-                <label for="Impurity      ">Impurity    </label>
-                <input type="text" class="form-control" id="Impurity   " name="Impurity    " placeholder="Write something.."  required >
-                <div class="invalid-feedback">
-                  Please enter something.
-            </div>
+                <!--quatrième ligne -->
+                <div class="row  mt-4 mb-2">
+                  <div class="col-md-4 mb-3">
+                    <label for="Micronucleus test     ">Micronucleus test  </label>
+                    <input type="text" class="form-control" id="Micronucleus test " name="Micronucleus test " placeholder="Write something.."  required >
+                    <div class="invalid-feedback">
+                      Please enter something.
+                  </div>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="Carcinogenicity    ">Carcinogenicity  </label>
+                  <input type="text" class="form-control" id="Carcinogenicity " name="Carcinogenicity " placeholder="Write something.."  required >
+                  <div class="invalid-feedback">
+                    Please enter something.
+                  </div>
+                </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="Reprotoxicity / teratogenicity    ">Reprotoxicity / teratogenicity  </label>
+                  <input type="text" class="form-control" id="Reprotoxicity / teratogenicity " name="Reprotoxicity / teratogenicity " placeholder="Write something.."  required >
+                  <div class="invalid-feedback">
+                    Please enter something.
+                  </div>
+                </div>
+                </div>
 
-            <div class="mb-3">
-                <label for="Particle size   ">Particle size   </label>
-                <input type="text" class="form-control" id="Particle size  " name="Particle size    " placeholder="Write something.."  required >
-                <div class="invalid-feedback">
-                  Please enter something.
-            </div>
+                <!--cinquième ligne -->
+                <div class="row  mt-4 mb-2">
+                  <div class="col-md-4 mb-3">
+                    <label for="Human data     ">Human data   </label>
+                    <input type="text" class="form-control" id="Human data  " name="Human data  " placeholder="Write something.."  required >
+                    <div class="invalid-feedback">
+                      Please enter something.
+                  </div>
+                  </div>
 
-            <div class="mb-3">
-                <label for="Other data     ">Other data   </label>
+                  <div class="col-md-4 mb-3">
+                    <label for="Toxicokinetics - Metabolism      ">Toxicokinetics - Metabolism   </label>
+                  <input type="text" class="form-control" id="Toxicokinetics - Metabolism   " name="Toxicokinetics - Metabolism   " placeholder="Write something.."  required >
+                  <div class="invalid-feedback">
+                    Please enter something.
+                    </div>
+                </div>
+    
+                  <div class="col-md-4 mb-3">
+                    <label for="Dermal/percutaneous absorption      ">Dermal/percutaneous absorption   </label>
+                  <input type="text" class="form-control" id="Dermal/percutaneous absorption   " name="Dermal/percutaneous absorption    " placeholder="Write something.."  required >
+                  <div class="invalid-feedback">
+                    Please enter something.
+                  </div>
+    
+                </div>
+                </div>
+    
+                <!--sixième ligne -->
+                <div class="row  mt-4 mb-2">
+                  <div class="col-md-4 mb-3">
+                    <label for="Impurity      ">Impurity    </label>
+                    <input type="text" class="form-control" id="Impurity   " name="Impurity    " placeholder="Write something.."  required >
+                    <div class="invalid-feedback">
+                      Please enter something.
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 mb-3">
+                    <label for="Particle size   ">Particle size   </label>
+                    <input type="text" class="form-control" id="Particle size  " name="Particle size    " placeholder="Write something.."  required >
+                    <div class="invalid-feedback">
+                      Please enter something.
+                    </div>
+                  </div>
+    
+                  <div class="col-md-4 mb-3">
+                    <label for="Other data     ">Other data   </label>
                 <input type="text" class="form-control" id="Other data   " name="Other data  " placeholder="Write something.."  required >
                 <div class="invalid-feedback">
                   Please enter something.
-            </div>
-            &nbsp
-            &nbsp
-            &nbsp
-            &nbsp
-              <div class="row">
-              <button class="btn btn-primary btn-lg btn-block" type="submit">ADD</button>
-              <button class="btn btn-primary btn-lg btn-block" type="submit">MODIFY</button>
-              <button class="btn btn-primary btn-lg btn-block" type="submit">DELETE</button>
-              <button class="btn btn-primary btn-lg btn-block" type="submit">GENERATE THE REPORT</button>
+                </div>
+                  </div>
+                </div>  
+              </div>
 
-            </div>
+                
+            &nbsp
+            &nbsp
+            &nbsp
+            &nbsp
+            <td>
+              <button type="button" class="btn btn-block btn-primary offset-md-8 col-md-3 mb-2" >submit</button>
+            </td>
             </form>
           </div>
-        </div>
+    </div>
   
-        <footer class="my-5 pt-5 text-muted text-center text-small">
+  <footer class="my-5 pt-5 text-muted text-center text-small">
           <p class="mb-1">&copy; 2022-2023 Insight BioSolutions</p>
           <ul class="list-inline">
             <li class="list-inline-item"><a href="#">Privacy</a></li>
             <li class="list-inline-item"><a href="#">Terms</a></li>
             <li class="list-inline-item"><a href="#">Support</a></li>
           </ul>
-        </footer>
+  </footer>
       </div>
 
        <!-- jQuery first, then Popper.js, then Bootstrap JS -->

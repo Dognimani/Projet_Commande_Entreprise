@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link  href="css2/bootstrap.min.css" rel="stylesheet" >
+
+  <title>Document</title>
+</head>
+<body>
+  
+  
+<div class="content-wrapper">
+
+  .    <div class="card row wrapper offset-1 col-md-10 mt-5 "  style="border-radius: 20px;">
+  <div class=" card-header card-info card-outline " style="cursor: move;">
+    
+    <h3 class="card-title">
+      <span class="info-box-icon badge-light badge">
+        <i class="fas fa-user-plus "></i>
+      </span>
+      NOUVELLE IDENTIFICATION CONTRIBUABLE
+    </h3>
+    <div class="card-tools" >
+      <ul class="nav nav-pills ml-auto">
+        <li class="nav-item">
+          <a class="nav-link active  btn btn-info" href="{{url('listeContribuables')}}" style="border-radius: 10px" >
+            <span class="info-box-icon badge-light badge px-2 btn btn-info ml-2" style="border-radius: 10px">
+              <i class="fas fa-bars"></i>
+            </span>          
+          </a>                      
+        </li>
+      </ul>
+    </div>
+  </div>
+  <form action="">
+        <div class="row offset-md-1 mt-4">
+          <div class="col-3 mr-4 form-group">
+            <label class="col-form-label ml-2" for="Nom" >Nom </label>
+            <input type="text" class="form-control " id="Nom" placeholder="Soro" name="Nom" style="border-radius: 10px" >
+            <span class="text-danger error"></span>
+          </div>
+          
+          <div class="col-3 ml-4 mr-4">
+            <label class="col-form-label ml-2" for="Prenom">Prénom</label>
+            <input type="text" class="form-control " id="Prenom" name="Prenom" placeholder="Dr_do" style="border-radius: 10px" >
+            <span class="text-danger error"></span>
+          </div>
+          <div class="col-3 mr-4 ml-4">
+            <label class="col-form-label ml-2" for="Date_Naissance">Date Naissance </label>
+            <input type="text" class="form-control " id="Date_Naissance" placeholder="02/02/2021" name="Date_Naissance" style="border-radius: 10px" >
+          </div>
+        </div>
+
+        <div class="row offset-md-1 mt-4">
+          <div class="col-3 mr-4">
+            <label class="col-form-label ml-2" for="Lieu_Naissance">Lieu Naissance </label>
+            <input type="text" class="form-control " id="Lieu_Naissance" placeholder="Miami" name="Lieu_Naissance" style="border-radius: 10px" >
+          </div>
+          <div class="col-3 ml-4 mr-4">
+            <label class="col-form-label ml-2" for="">Sexe</label>
+            <input type="text" class="form-control "  name="Sexe" style="border-radius: 10px" >
+            <span class="text-danger error"></span>
+          </div>
+          <div class="col-3 mr-4 ml-4">
+            <label class="col-form-label ml-2 " for="Nationnalite">Nationnalité</label>
+            <input type="text" class="form-control " id="Nationnalite"  name="Nationnalite" placeholder="Ivoirienne" style="border-radius: 10px" >
+             <span class="text-danger error"></span>
+          </div>
+        </div>
+
+        <div class="row offset-md-1 mt-4">
+          <div class="col-3 mr-4">
+            <label class="col-form-label ml-2" for="Tel">Téléphone</label>
+            <input type="text" class="form-control " id="Tel" placeholder="Soro" name="Tel" placeholder="0544457273" style="border-radius: 10px" > 
+            <span class="text-danger error"></span>
+          </div>
+          <div class="col-3 ml-4 mr-4">
+            <label class="col-form-label ml-2" for="Mail">Mail</label>
+            <input type="mail" class="form-control input_arrondi" id="Mail"  name="Mail" placeholder="docteur@gamail" style="border-radius: 10px" > 
+             <span class="text-danger error"></span>
+          </div>
+          <div class="col-3 mr-4 ml-4">
+            <label class="col-form-label " for="Quartier">Quartier</label>
+            <input type="text" class="form-control" id="Quartier" placeholder="beach" name="Quartier" style="border-radius: 10px" >
+            <span class="text-danger error"></span>
+          </div>
+        </div>
+
+        <div class="row offset-md-1 mt-4">
+          <div class="col-3 mr-4">
+            <label class="col-form-label ml-2" for="Repere">Répère</label>
+            <input type="text" class="form-control" id="Repere" placeholder="green street" name="Repere" style="border-radius: 10px" >
+            <span class="text-danger error"></span>
+          </div>
+          <div class="col-3 ml-4 mr-4">
+            <label class="col-form-label ml-2" for="Activite">Activité</label>
+            <input type="text" class="form-control" id="Activite" name="Activite" placeholder="boutique" style="border-radius: 10px" >
+            <span class="text-danger error"></span>
+          </div>
+          <div class="col-3 mr-4 ml-4">
+            <label class="col-form-label ml-2" for="Estimation_CA">Estimation CA</label>
+            <input type="number" class="form-control" id="Estimation_CA" placeholder="200.000.000" name="Estimation_CA" style="border-radius: 10px" >
+             <span class="text-danger error"></span>
+          </div>
+        </div>
+
+        <div class="row offset-md-1 mt-3">
+          <div class="col-3 offset-md-7 ">
+            <label class="col-form-label ml-2" for="Nature_Taxe"></label>
+            <select name="Nature_Taxe" id="Nature_Taxe" class="form-control" style="border-radius: 10px" >
+             
+            </select>
+            <span class="text-danger error"></span>
+          </div>
+        </div>
+
+        <div class="row offset-md-1">
+            <div class="row mt-5 ml-4 mb-3">
+              <button type="reset" class="px-2 btn btn-outline-warning ml-2" style="border-radius: 10px">ANNULER</button>
+            </div>
+            <div class="row mt-5 ml-4 mb-3">
+              <button type="submit" class="px-2 btn btn-info ml-2" style="border-radius: 10px">SOUMETTRE</button>
+            </div>
+        </div>
+
+        </div>
+  </div>
+
+</form>
+</div>  
+</body>
+
+<script>
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+  (function() {
+    'use strict';
+
+    window.addEventListener('load', function() {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+</script>
+</html>
+
+
+      
