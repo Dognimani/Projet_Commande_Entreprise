@@ -36,6 +36,7 @@ class Result(Base):
     Toxicity_Type=Column(String)
     value=Column(String) # pas sûr que ce soit string mais plutôt text
     CAS_Number=Column(String,ForeignKey("molecules.Numero_CAS")) #  la clé étrangère
+    Created_date=Column(DateTime, default= datetime.datetime.utcnow)
     molecules = relationship("Molecule",back_populates="results") # mapping de la clé étrangère venant de la table molécule
     references=relationship("Reference" , secondary="referencements", back_populates="results")
 
@@ -45,6 +46,7 @@ class Reference(Base):
     __tablename__ ='references'
     id=Column(Integer,primary_key=True)
     number=Column(Integer)
+    Created_date=Column(DateTime, default= datetime.datetime.utcnow)
     value=Column(String) # pas sûr que ce soit string mais plutôt text
     results=relationship("Result", secondary="referencements", back_populates="references")
 
@@ -54,5 +56,13 @@ referencements = Table('referencements', Base.metadata,
     Column('result_id', ForeignKey('resultats.id'), primary_key=True),
     Column('reference_id', ForeignKey('references.id'), primary_key=True)
 )
+
+class User(Base):
+    __tablename__="users"
+    username = Column(String)
+    email = Column(String)
+    password =Column(String)
+    Created_date=Column(DateTime, default= datetime.datetime.utcnow)
+
 # Create the tables in the database
 #Base.metadata.create_all(engine)
