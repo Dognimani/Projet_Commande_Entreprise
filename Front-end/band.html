@@ -1,485 +1,500 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="img/logo-IBSF.png">
 
-    <!-- Bootstrap CSS -->
-    <link  href="css2/bootstrap.min.css" rel="stylesheet" >
-    <link  href="band.css" rel="stylesheet" >
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="img/logo-IBSF.png">
+
+  <!-- Bootstrap CSS -->
+  <link href="css2/bootstrap.min.css" rel="stylesheet">
+  <link href="band.css" rel="stylesheet">
 
 
-    <title>project</title>
-  </head>
-  <body>
-    <nav class="navbar navbar-dark bg-primary">
-  <a class="navbar-brand" href="#">BioSolutions</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="band.html">ADD COMPONENT <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="List.html">LIST</a>
-      </li>
-      
-      
-    </ul>
+  <title>Checkout</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark" style="background-color: rgb(0, 83, 159)">
+    <a class="navbar-brand" href="#">BioSolutions</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="band.html">ADD COMPONENT <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="List.html">LIST</a>
+        </li>
+
+
+      </ul>
+    </div>
+  </nav>
+  <!-- logo insignts biosolutions -->
+  <div class="py-2 text-center">
+    <img class="d-block mx-auto mb-4" src="img/logo-IBSF.png" alt="" width="120" height="120">
+    <h2 style="color: rgb(0, 83, 159)">Checkout form</h2>
   </div>
-</nav>
-    <!-- logo insignts biosolutions -->
-    <div class="py-5 text-center">
-          <img class="d-block mx-auto mb-4" src="img/logo-IBSF.png" alt="" width="120" height="120">
-          <h2>Checkout form</h2>
-    </div>
-    <!-- FORM  -->
-    <div class="col-md-10 offset-1" >     
-        <form action="">
-          <!-- Component identification section-->   
-            <div class="card card-primary card-outline">
-              <div class="card-header">
-                <h3 class="card-title m-0">Component identification</h3>
+  <!-- FORM  -->
+  <div class="col-md-10 offset-1">
+    <form action="">
+      <!-- Component identification section-->
+      <div class="card card-primary card-outline">
+        <div class="card-header" style="background-color: rgb(0, 83, 159); color: white;">
+          <h3 class="card-title m-0">Component identification</h3>
+        </div>
+        <div class="card-body">
+          <div class="row  mt-4 mb-2">
+            <div class="col-md-4 mb-3">
+              <label for="Name">Name</label>
+              <input type="text" class="form-control" id="Name" placeholder="Name" value="" required>
+              <div class="invalid-feedback">
+                Name is required.
               </div>
-              <div class="card-body">
-                <div class="row  mt-4 mb-2">
-                      <div class="col-md-4 mb-3">
-                          <label for="Name">Name</label>
-                          <input type="text" class="form-control" id="Name" placeholder="Name" value="" required>
-                          <div class="invalid-feedback">
-                            Name is required.
-                          </div>
-                      </div>
-                        
-                      <div class="col-md-4 mb-3">
-                        <label for="CanonicalFormula">Canonical Formula</label>
-                        <div class="input-group">
-                          <input type="text" class="form-control" id="CanonicalFormula" placeholder="CanonicalFormula" required>
-                          <div class="invalid-feedback" style="width: 100%;">
-                            Your Canonical Formula is required.
-                          </div>
-                        </div>
-                      </div>
-              </div>
+            </div>
 
-              <div class="card-body">
-                      <div class="col-md-4 mb-3">
-                        <label for="cas">CAS Number</label>
-                        <input type="cas" class="form-control" id="cas" placeholder="casNumber" required>
-                        <div class="invalid-feedback" style="width: 100%;">
-                            Your cas number is required.
-                          </div>
-                      </div>
+            <div class="col-md-4 mb-3">
+              <label for="CanonicalFormula">Canonical Formula</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="CanonicalFormula" placeholder="CanonicalFormula" required>
+                <div class="invalid-feedback" style="width: 100%;">
+                  Your Canonical Formula is required.
                 </div>
               </div>
             </div>
-            <!--Chemical Properties section-->   
-            <div class="card card-primary card-outline mt-5">
-              <div class="card-header">
-                <h3 class="card-title m-0">Chemical Properties</h3>
-              </div>
-              <div class="card-body">
 
-                <!--première ligne -->
-                <div class="row  mt-4 mb-2">
-                      <div class="col-md-4 mb-3">
-                          <label for="MolecularWeight">Molecular Weight</label>
-                          <input type="text" class="form-control" id="MolecularWeight" placeholder="MolecularWeight" required>
-                          <div class="invalid-feedback">
-                            Please enter the Molecular Weight.
-                          </div>
-                      </div>
-                        
-                      <div class="col-md-4 mb-3">
-                        <label for="XLogP3">XLogP3</label>
-                        <input type="text" class="form-control" id="XLogP3" placeholder="XLogP3" required>
-                        <div class="invalid-feedback">
-                          Please enter XLogP3.
-                        </div>
-                      </div>
-                </div>
-                <div class="row  mt-4 mb-2">
-
-                      <div class="col-md-4 mb-3">
-                          <label for="HydrogenBondDonorCount">Hydrogen Bond Donor Count</label>
-                          <input type="text" class="form-control" id="HydrogenBondDonorCount" placeholder="HydrogenBondDonorCount" required>
-                          <div class="invalid-feedback">
-                            Please enter Hydrogen Bond Donor Count.
-                          </div>
-                      </div>
-                
-                <!--deuxième ligne -->
-                  <div class="col-md-4 mb-3">
-                    <label for="HydrogenBondAcceptorCount">Hydrogen Bond Acceptor Count</label>
-                    <input type="text" class="form-control" id="HydrogenBondAcceptorCount" placeholder="HydrogenBondAcceptorCount" required>
-                    <div class="invalid-feedback">
-                      Please enter Hydrogen Bond Acceptor Count.
-                    </div>
-                  </div> 
-
-                </div>
-
-                <div class="row  mt-4 mb-2">
-
-                  <div class="col-md-4 mb-3">
-                    <label for="RotatableBondCount">Rotatable Bond Count</label>
-                    <input type="text" class="form-control" id="RotatableBondCount" placeholder="RotatableBondCount" required>
-                    <div class="invalid-feedback">
-                      Please enter Rotatable Bond Count.
-                    </div>
-                  </div>
-                  <div class="col-md-4 mb-3">
-                    <label for="ExactMass">Exact Mass</label>
-                    <input type="text" class="form-control" id="ExactMass" placeholder="ExactMass" required>
-                    <div class="invalid-feedback">
-                      Please enter Exact Mass.
-                    </div>
-                  </div>
-                </div>
-                
-
-                <!--troisième ligne -->
-                <div class="row  mt-4 mb-2">
-                  <div class="col-md-4 mb-3">
-                    <label for="MonoisotopicMass">Monoisotopic Mass</label>
-                    <input type="text" class="form-control" id="MonoisotopicMass" placeholder="MonoisotopicMass" required>
-                    <div class="invalid-feedback">
-                      Please enter Monoisotopic Mass.
-                    </div>
-                  </div> 
-                  <div class="col-md-4 mb-3">
-                    <label for="TopologicalPolarSurfaceArea">Topological Polar Surface Area</label>
-                    <input type="text" class="form-control" id="TopologicalPolarSurfaceArea" placeholder="TopologicalPolarSurfaceArea" required>
-                    <div class="invalid-feedback">
-                      Please enter Topological Polar Surface Area.
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row  mt-4 mb-2">
-                  <div class="col-md-4 mb-3">
-                    <label for="HeavyAtomCount">Heavy Atom Count</label>
-                    <input type="text" class="form-control" id="HeavyAtomCount" placeholder="HeavyAtomCount" required>
-                    <div class="invalid-feedback">
-                      Please enter Heavy Atom Count.
-                    </div>
-                  </div>
-
-                 <!--quatrième ligne -->
-                  <div class="col-md-4 mb-3">
-                  <label for="Formal Charge">Formal Charge</label>
-                    <input type="text" class="form-control" id="FormalCharge" placeholder="FormalCharge" required>
-                    <div class="invalid-feedback">
-                      Please enter Formal Charge.
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row  mt-4 mb-2">
-                  <div class="col-md-4 mb-3">
-                    <label for="Complexity">Complexity</label>
-                    <input type="text" class="form-control" id="Complexity" placeholder="Complexity" required>
-                    <div class="invalid-feedback">
-                      Please enter Complexity.
-                    </div>
-                  </div>
-                  <div class="col-md-4 mb-3">
-                    <label for="IsotopeAtomCount">Isotope Atom Count</label>
-                    <input type="text" class="form-control" id="IsotopeAtomCount" placeholder="IsotopeAtomCount" required>
-                    <div class="invalid-feedback">
-                      Please enter Isotope Atom Count.
-                    </div>
-                  </div>
-                </div>
-                
-                <!--cinquième ligne -->
-                <div class="row  mt-4 mb-2">
-                  <div class="col-md-4 mb-3">
-                  <label for="DefinedAtomStereocenterCount">Defined Atom Stereocenter Count</label>
-                  <input type="text" class="form-control" id="DefinedAtomStereocenterCount" placeholder="DefinedAtomStereocenterCount" required>
-                  <div class="invalid-feedback">
-                    Please enter Defined Atom Stereocenter Count.
-                  </div>
-                  </div>
-                  <div class="col-md-4 mb-3">
-                    <label for="UndefinedAtomStereocenterCount">Undefined Atom Stereocenter Count</label>
-                    <input type="text" class="form-control" id="UndefinedAtomStereocenterCount" placeholder="UndefinedAtomStereocenterCount" required>
-                    <div class="invalid-feedback">
-                      Please enter Undefined Atom Stereocenter Count.
-                    </div>
-                    </div>
-                  </div>
-                  
-                <div class="row  mt-4 mb-2">
-                  <div class="col-md-4 mb-3">
-                    <label for="DefinedBondStereocenterCount">Defined Bond Stereocenter Count</label>
-                    <input type="text" class="form-control" id="DefinedBondStereocenterCount" placeholder="DefinedBondStereocenterCount" required>
-                    <div class="invalid-feedback">
-                      Please enter Defined Bond Stereocenter Count.
-                    </div>
-                  </div>
-                
-
-
-                    <!--sixième ligne -->
-                  <div class="col-md-4 mb-3">
-                    <label for="UndefinedBondStereocenterCount">Undefined Bond Stereocenter Count</label>
-                    <input type="text" class="form-control" id="UndefinedBondStereocenterCount" placeholder="UndefinedBondStereocenterCount" required>
-                    <div class="invalid-feedback">
-                      Please enter Undefined Bond Stereocenter Count.
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row  mt-4 mb-2">
-                  <div class="col-md-4 mb-3">
-                    <label for="Covalently-Bonded Unit Count">Covalently-Bonded Unit Count</label>
-                    <input type="text" class="form-control" id="Covalently-Bonded Unit Count" placeholder="Covalently-BondedUnitCount" required>
-                    <div class="invalid-feedback">
-                      Please enter Covalently-Bonded Unit Count.
-                    </div>
-                  </div>
-                </div>
-
-                  
-                <h4 class="mb-3">Compound Is Canonicalized</h4>
-                <div class="d-block my-3">
-                  <div class="custom-control custom-radio">
-                    <input id="yes" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-                    <label class="custom-control-label" for="yes">Yes</label>
-                  </div>
-                  <div class="custom-control custom-radio">
-                    <input id="no" name="paymentMethod" type="radio" class="custom-control-input" required>
-                    <label class="custom-control-label" for="no">No</label>
-                  </div>
-                </div>
-
+            <div class="col-md-4 mb-3">
+              <label for="cas">CAS Number</label>
+              <input type="cas" class="form-control" id="cas" placeholder="casNumber" required>
+              <div class="invalid-feedback" style="width: 100%;">
+                Your cas number is required.
               </div>
             </div>
-            <!--TOXICOLOGICAL PROFILE section -->
-            <div class="card card-primary card-outline mt-5">
-                  <div class="card-header">
-                    <h3 class="card-title m-0">TOXICOLOGICAL PROFILE</h3>
-                  </div>
-                  <div class="card-body">
-        
-                    <!--prémière ligne -->
-                    <div class="row  mt-4 mb-2">
-                          <div class="col-md-4 mb-3">
-                            <div class="form-group">
-                              <label for="AcuteOralToxicity">Acute oral toxicity</label>
-                              <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
-                            </div>
-                          </div>
-                            
-                          <div class="col-md-4 mb-3">
-                            <div class="form-group">
-                              <label>Acute dermal toxicity</label>
-                              <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="row  mt-4 mb-2">
-                          <div class="col-md-4 mb-3">
-                            <div class="form-group">
-                              <label>Acute toxicity by other route</label>
-                              <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
-                            </div>
-                          </div>
-                      <!--deuxième ligne -->
-                      <div class="col-md-4 mb-3">
-                        <div class="form-group">
-                          <label for="SkinIrritation ">Skin irritation </label>
-                          <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
-                        </div>
-                      </div>      
-                    </div>
-    
-                    <div class="row  mt-4 mb-2">
-                        <div class="col-md-4 mb-3">
-                          <div class="form-group">
-                            <label for="EyeIrritation ">Eye irritation </label>
-                            <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
-                          </div>
-                        </div>
-                          <div class="col-md-4 mb-3">
-                            <div class="form-group">
-                              <label for="SkinSensitisation  ">Skin sensitisation  </label>
-                              <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
-                            </div>
-                          </div>
-                    </div>
+          </div>
+        </div>
+      </div>
 
-                    <!--troisième ligne -->
-                    <div class="row  mt-4 mb-2">
-                        <div class="col-md-4 mb-3">
-                          <div class="form-group">
-                            <label for="Sub-chronicToxicity   ">Sub-chronic toxicity  </label>
-                            <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
-                          </div>
-                        </div>
-                      
-                        <div class="col-md-4 mb-3">
-                          <div class="form-group">
-                            <label for="AmesTest    ">Ames test  </label>
-                            <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
-                          </div>
-                        </div>
-                    </div>
+      <!--Chemical Properties section-->
+      <div class="card card-primary card-outline mt-5">
+        <div class="card-header" style="background-color: rgb(0, 83, 159); color: white;">
+          <h3 class="card-title m-0">Chemical Properties</h3>
+        </div>
+        <div class="card-body">
 
-                    <div class="row  mt-4 mb-2">
-                        <div class="col-md-4 mb-3">
-                          <div class="form-group">
-                            <label for="MLA-TK    ">MLA-TK  </label>
-                            <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
-                          </div>
-                        </div>
-
-                        <!--quatrième ligne -->
-                        <div class="col-md-4 mb-3">
-                          <div class="form-group">
-                            <label for="MicronucleusTest">Micronucleus test  </label>
-                            <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
-                          </div>
-                        </div> 
-                     </div>
-
-                     <div class="row  mt-4 mb-2">
-                        <div class="col-md-4 mb-3">
-                          <div class="form-group">
-                            <label for="Carcinogenicity">Carcinogenicity  </label>
-                            <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
-                          </div>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                          <div class="form-group">
-                            <label for="Reprotoxicity/teratogenicity    ">Reprotoxicity / teratogenicity  </label>
-                            <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
-                          </div>
-                        </div>
-                    </div>
-
-                    <!--cinquième ligne -->
-                    <div class="row  mt-4 mb-2">
-                        <div class="col-md-4 mb-3">
-                          <div class="form-group">
-                            <label for="HumanData     ">Human data   </label>
-                            <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
-                          </div>
-                        </div>
-                        <div class="col-md-4 mb-3">
-                          <div class="form-group">
-                            <label for="Toxicokinetics-Metabolism      ">Toxicokinetics - Metabolism   </label>
-                            <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row  mt-4 mb-2">
-                        <div class="col-md-4 mb-3">
-                          <div class="form-group">
-                            <label for="Dermal/percutaneousAbsorption      ">Dermal/percutaneous absorption   </label>
-                            <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
-                          </div>
-                        </div>
-        
-                    <!--sixième ligne -->
-                      <div class="col-md-4 mb-3">
-                        <div class="form-group">
-                          <label for="Impurity      ">Impurity    </label>
-                          <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row  mt-4 mb-2">
-
-                      <div class="col-md-4 mb-3">
-                        <div class="form-group">
-                          <label for="ParticleSize   ">Particle size   </label>
-                          <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
-                        </div>
-                      </div>
-                      <div class="col-md-4 mb-3">
-                        <div class="form-group">
-                          <label for="OtherData     ">Other data   </label>
-                          <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card card-primary card-outline mt-5">
-                      <div class="card-header">
-                        <h3 class="card-title m-0">REFERENCE</h3>
-                      </div>
-                      <div class="card-body">
-                    <div class="row  mt-4 mb-2">
-
-                      <div class="col-md-4 mb-3">
-                        <div class="form-group">
-                          <label for="Reference  ">Reference  </label>
-                          <textarea class="form-control" rows="3"  placeholder="WriteSomething.."></textarea>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                    </div>
-                    &nbsp
-                &nbsp
-                &nbsp
-                    <td>
-                      <button type="submit" class="btn btn-block btn-primary offset-md-8 col-md-3 mb-2">submit</button>
-                    </td>
-                    </div>  
+          <!--première ligne -->
+          <div class="row  mt-4 mb-2">
+            <div class="col-md-4 mb-3">
+              <label for="MolecularWeight">Molecular Weight</label>
+              <input type="text" class="form-control" id="MolecularWeight" placeholder="MolecularWeight" required>
+              <div class="invalid-feedback">
+                Please enter the Molecular Weight.
+              </div>
             </div>
-    
-                &nbsp
-                &nbsp
-                &nbsp
-                &nbsp
-        </form>
-    </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="XLogP3">XLogP3</label>
+              <input type="text" class="form-control" id="XLogP3" placeholder="XLogP3" required>
+              <div class="invalid-feedback">
+                Please enter XLogP3.
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="HydrogenBondDonorCount">Hydrogen Bond Donor Count</label>
+              <input type="text" class="form-control" id="HydrogenBondDonorCount" placeholder="HydrogenBondDonorCount"
+                required>
+              <div class="invalid-feedback">
+                Please enter Hydrogen Bond Donor Count.
+              </div>
+            </div>
+          </div>
+
+          <!--deuxième ligne -->
+          <div class="row  mt-4 mb-2">
+            <div class="col-md-4 mb-3">
+              <label for="HydrogenBondAcceptorCount">Hydrogen Bond Acceptor Count</label>
+              <input type="text" class="form-control" id="HydrogenBondAcceptorCount"
+                placeholder="HydrogenBondAcceptorCount" required>
+              <div class="invalid-feedback">
+                Please enter Hydrogen Bond Acceptor Count.
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="RotatableBondCount">Rotatable Bond Count</label>
+              <input type="text" class="form-control" id="RotatableBondCount" placeholder="RotatableBondCount" required>
+              <div class="invalid-feedback">
+                Please enter Rotatable Bond Count.
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="ExactMass">Exact Mass</label>
+              <input type="text" class="form-control" id="ExactMass" placeholder="ExactMass" required>
+              <div class="invalid-feedback">
+                Please enter Exact Mass.
+              </div>
+            </div>
+          </div>
+
+          <!--troisième ligne -->
+          <div class="row  mt-4 mb-2">
+            <div class="col-md-4 mb-3">
+              <label for="MonoisotopicMass">Monoisotopic Mass</label>
+              <input type="text" class="form-control" id="MonoisotopicMass" placeholder="MonoisotopicMass" required>
+              <div class="invalid-feedback">
+                Please enter Monoisotopic Mass.
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="TopologicalPolarSurfaceArea">Topological Polar Surface Area</label>
+              <input type="text" class="form-control" id="TopologicalPolarSurfaceArea"
+                placeholder="TopologicalPolarSurfaceArea" required>
+              <div class="invalid-feedback">
+                Please enter Topological Polar Surface Area.
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="HeavyAtomCount">Heavy Atom Count</label>
+              <input type="text" class="form-control" id="HeavyAtomCount" placeholder="HeavyAtomCount" required>
+              <div class="invalid-feedback">
+                Please enter Heavy Atom Count.
+              </div>
+            </div>
+          </div>
+
+          <!--quatrième ligne -->
+          <div class="row  mt-4 mb-2">
+            <div class="col-md-4 mb-3">
+              <label for="Formal Charge">Formal Charge</label>
+              <input type="text" class="form-control" id="FormalCharge" placeholder="FormalCharge" required>
+              <div class="invalid-feedback">
+                Please enter Formal Charge.
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="Complexity">Complexity</label>
+              <input type="text" class="form-control" id="Complexity" placeholder="Complexity" required>
+              <div class="invalid-feedback">
+                Please enter Complexity.
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="IsotopeAtomCount">Isotope Atom Count</label>
+              <input type="text" class="form-control" id="IsotopeAtomCount" placeholder="IsotopeAtomCount" required>
+              <div class="invalid-feedback">
+                Please enter Isotope Atom Count.
+              </div>
+            </div>
+          </div>
+
+          <!--cinquième ligne -->
+          <div class="row  mt-4 mb-2">
+            <div class="col-md-4 mb-3">
+              <label for="DefinedAtomStereocenterCount">Defined Atom Stereocenter Count</label>
+              <input type="text" class="form-control" id="DefinedAtomStereocenterCount"
+                placeholder="DefinedAtomStereocenterCount" required>
+              <div class="invalid-feedback">
+                Please enter Defined Atom Stereocenter Count.
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="UndefinedAtomStereocenterCount">Undefined Atom Stereocenter Count</label>
+              <input type="text" class="form-control" id="UndefinedAtomStereocenterCount"
+                placeholder="UndefinedAtomStereocenterCount" required>
+              <div class="invalid-feedback">
+                Please enter Undefined Atom Stereocenter Count.
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="DefinedBondStereocenterCount">Defined Bond Stereocenter Count</label>
+              <input type="text" class="form-control" id="DefinedBondStereocenterCount"
+                placeholder="DefinedBondStereocenterCount" required>
+              <div class="invalid-feedback">
+                Please enter Defined Bond Stereocenter Count.
+              </div>
+            </div>
+          </div>
+
+          <!--sixième ligne -->
+          <div class="row  mt-4 mb-2">
+            <div class="col-md-4 mb-3">
+              <label for="UndefinedBondStereocenterCount">Undefined Bond Stereocenter Count</label>
+              <input type="text" class="form-control" id="UndefinedBondStereocenterCount"
+                placeholder="UndefinedBondStereocenterCount" required>
+              <div class="invalid-feedback">
+                Please enter Undefined Bond Stereocenter Count.
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <label for="Covalently-Bonded Unit Count">Covalently-Bonded Unit Count</label>
+              <input type="text" class="form-control" id="Covalently-Bonded Unit Count"
+                placeholder="Covalently-BondedUnitCount" required>
+              <div class="invalid-feedback">
+                Please enter Covalently-Bonded Unit Count.
+              </div>
+            </div>
+          </div>
+
+
+          <h class="mb-3">Compound Is Canonicalized</b>
+            <div class="d-block my-3">
+              <div class="custom-control custom-radio">
+                <input id="yes" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                <label class="custom-control-label" for="yes">Yes</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input id="no" name="paymentMethod" type="radio" class="custom-control-input" required>
+                <label class="custom-control-label" for="no">No</label>
+              </div>
+            </div>
+
+        </div>
+      </div>
+
+      <!--TOXICOLOGICAL PROFILE section -->
+      <div class="card card-primary card-outline mt-5">
+        <div class="card-header" style="background-color: rgb(0, 83, 159); color: white;">
+          <h3 class="card-title m-0">TOXICOLOGICAL PROFILE</h3>
+        </div>
+        <div class="card-body">
+
+          <!--prémière ligne -->
+          <div class="row  mt-4 mb-2">
+            <div class="col-md-6 mb-3">
+              <div class="form-group">
+                <label for="AcuteOralToxicity">Acute oral toxicity</label>
+                <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <div class="form-group">
+                <label>Acute dermal toxicity</label>
+                <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!--deuxième ligne -->
+          <div class="row  mt-4 mb-2">
+            <div class="col-md-6 mb-3">
+              <div class="form-group">
+                <label>Acute toxicity by other route</label>
+                <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <div class="form-group">
+                <label for="SkinIrritation ">Skin irritation </label>
+                <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!--troisième ligne -->
+          <div class="row  mt-4 mb-2">
+            <div class="col-md-6 mb-3">
+              <div class="form-group">
+                <label for="EyeIrritation ">Eye irritation </label>
+                <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="form-group">
+                <label for="SkinSensitisation  ">Skin sensitisation </label>
+                <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!--quatrième ligne -->
+          <div class="row  mt-4 mb-2">
+            <div class="col-md-6 mb-3">
+              <div class="form-group">
+                <label for="Sub-chronicToxicity   ">Sub-chronic toxicity </label>
+                <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <div class="form-group">
+                <label for="AmesTest    ">Ames test </label>
+                <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!--cinquième ligne -->
+          <div class="row  mt-4 mb-2">
+            <div class="col-md-6 mb-3">
+              <div class="form-group">
+                <label for="MLA-TK    ">MLA-TK </label>
+                <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <div class="form-group">
+                <label for="MicronucleusTest">Micronucleus test </label>
+                <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!--sixième ligne -->
+          <div class="row  mt-4 mb-2">
+            <div class="col-md-6 mb-3">
+              <div class="form-group">
+                <label for="Carcinogenicity">Carcinogenicity </label>
+                <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <div class="form-group">
+                <label for="Reprotoxicity/teratogenicity    ">Reprotoxicity / teratogenicity </label>
+                <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- septième ligne -->
+          <div class="row  mt-4 mb-2">
+            <div class="col-md-6 mb-3">
+              <div class="form-group">
+                <label for="HumanData     ">Human data </label>
+                <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <div class="form-group">
+                <label for="Toxicokinetics-Metabolism      ">Toxicokinetics - Metabolism </label>
+                <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- huitième ligne -->
+          <div class="row  mt-4 mb-2">
+            <div class="col-md-6 mb-3">
+              <div class="form-group">
+                <label for="Dermal/percutaneousAbsorption      ">Dermal/percutaneous absorption </label>
+                <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <div class="form-group">
+                <label for="Impurity      ">Impurity </label>
+                <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- neuvième ligne -->
+          <div class="row  mt-4 mb-2">
+            <div class="col-md-6 mb-3">
+              <div class="form-group">
+                <label for="ParticleSize   ">Particle size </label>
+                <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <div class="form-group">
+                <label for="OtherData     ">Other data </label>
+                <textarea class="form-control" rows="10" placeholder="WriteSomething.."></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REFERENCE section -->
+      <div class="card card-primary card-outline mt-5">
+        <div class="card-header" style="background-color: rgb(0, 83, 159); color: white;">
+          <h3 class="card-title m-0">REFERENCE</h3>
+        </div>
+        <div class="card-body">
+          <button type="button" onclick="addReference()"
+            style="background-color: rgb(223, 246, 255); color: rgb(0, 83, 159);">Add a
+            Reference</button>
+          <!-- <div class="row  mt-4 mb-2">
+            <div class="col-md-4 mb-3">
+              <div class="form-group">
+                <label for="Reference  ">Reference </label>
+                <textarea class="form-control" rows="3" placeholder="WriteSomething.."></textarea>
+              </div>
+            </div> -->
+        </div>
+      </div>
+  </div>
+
+  <td>
+    <button type="submit" style="background-color: rgb(0, 83, 159); color: white; text-align: center;"
+      class="btn btn-block btn-primary offset-md-8 col-md-3 mb-2">submit</button>
+  </td>
 
   <footer class="my-5 pt-5 text-muted text-center text-small">
-          <p class="mb-1">&copy; 2022-2023 Insight BioSolutions</p>
-          <ul class="list-inline">
-            <li class="list-inline-item"><a href="#">Privacy</a></li>
-            <li class="list-inline-item"><a href="#">Terms</a></li>
-            <li class="list-inline-item"><a href="#">Support</a></li>
-          </ul>
+    <p class="mb-1">&copy; 2022-2023 Insight BioSolutions</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
   </footer>
 
-       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-       <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-       <script src="js2/bootstrap.min.js" ></script>
-      
-       <script>
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
-        (function() {
-          'use strict';
-  
-          window.addEventListener('load', function() {
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            var forms = document.getElementsByClassName('needs-validation');
-  
-            // Loop over them and prevent submission
-            var validation = Array.prototype.filter.call(forms, function(form) {
-              form.addEventListener('submit', function(event) {
-                if (form.checkValidity() === false) {
-                  event.preventDefault();
-                  event.stopPropagation();
-                }
-                form.classList.add('was-validated');
-              }, false);
-            });
-          }, false);
-        })();
-      </script>
-     </body>
-   </html>
+  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="js2/bootstrap.min.js"></script>
+
+  <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function () {
+        'use strict';
+
+        window.addEventListener('load', function () {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function (form) {
+            form.addEventListener('submit', function (event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+
+    //Add a reference
+    function addReference() {
+    }
+  </script>
+</body>
+
+</html>
