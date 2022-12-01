@@ -1,4 +1,5 @@
-from typing import List, Optional, Generic, TypeVar, datetime
+from typing import List, Optional, Generic, TypeVar
+import datetime
 from pydantic import BaseModel, Field,EmailStr
 from pydantic.generics import GenericModel
 
@@ -31,14 +32,24 @@ class MoleculeSchema(BaseModel):
 class ResultSchema(BaseModel):
     id : int
     Toxicity_Type : str
-    value : str # pas sûr que ce soit string mais plutôt text
+    value : str 
     CAS_Number : str
     
+#class RequestResult():
+    #: ResultSchema = Field(...)
+
+
+
+class Response(GenericModel,Generic[T]):
+    code:str
+    status: str
+    message: str
+    result:Optional[T]
 
 class ReferenceSchema(BaseModel):
     id : int
     number : int
-    value : str # pas sûr que ce soit string mais plutôt text
+    value : str 
 
 
 class UserSchema(BaseModel):

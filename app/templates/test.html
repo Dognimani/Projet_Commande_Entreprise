@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="./../static/logo-IBSF.png">
+
+  <!-- Bootstrap CSS -->
+  <link href="{{ url_for('static', path='/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', path='/band.css') }}" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/45e38e596f.js" crossorigin="anonymous"></script>
+
+  <title>Checkout</title>
+</head>
+<body>
+    <form action="http://localhost:8000/test">
+        <div class="row  mt-4 mb-2">
+            <div class="col-md-6 mb-3">
+              <div class="form-group">
+                <label for="EyeIrritation ">email </label>
+                <input class="form-control" name="email" />
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <div class="form-group">
+                <label for="SkinSensitisation  ">password </label>
+                <input class="form-control" name="password"/>
+              </div>
+            </div>
+          </div>
+          <button type="submit">envoyer</button>
+    </form>
+</body>
+
+</html>

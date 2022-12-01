@@ -1,12 +1,12 @@
-from fastapi import FastAPI,Request
+from fastapi import FastAPI,Request,Form,Depends
 import model
 from config import engine
 #prepa du front
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
-#from fastapi.templating import Jinja2Templates
 from starlette.templating import Jinja2Templates
 
+#import router
 
 model.Base.metadata.create_all(bind=engine)
 
@@ -42,3 +42,8 @@ async def band(request: Request):
 @app.get("/ViewMolecule/", response_class=HTMLResponse)
 async def band(request: Request):
     return templates.TemplateResponse("ViewMolecule.html", {"request": request})      
+
+
+#Create a molecule
+    
+#app.include_router(router.router,prefix="/result",tags=["result"])
