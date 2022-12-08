@@ -52,7 +52,7 @@
           <h4>Liste des molecules </h4>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="http://localhost:8000/">
+          <a href="http://localhost:8000/MoleculeCreate">
             <button type="button" class="btn btn-outline-info ml-5 " style="border-radius: 10px; background-color: rgb(0, 83, 159); color: white;" data-toggle="modal"  data-target="#DistributionVersement">
               <i class="fas fa-plus-circle w-100"></i>
           </button>
@@ -81,10 +81,11 @@
             <th scope="col">Actions</th>
         </thead>
         <tbody>
+          {% for molecule in molecules %}
           <tr>
-            <td> Benzène</td>
-            <td>7536353-45</td>
-            <td> C6H6</td>
+            <td> {{molecule.Name}}</td>
+            <td> {{molecule.CAS_Number}}</td>
+            <td>{{molecule.Canonical_Formula}}</td>
             <td> 11/11/2022</td>
             <td class="col-1">
               <button class=" btn-outline-info mr-1" style="border-radius: 10px">details</button>
@@ -94,32 +95,7 @@
                 data-whatever="@getbootstrap"><i class="far fa-trash-alt"></i> delete</button>
             </td>
           </tr>
-          <tr>
-            <td>ETHANOL</td>
-            <td>7536353-12</td>
-            <td> C2h4O</td>
-            <td> 11/11/2022</td>
-            <td class="col-1">
-              <button class=" btn-outline-info mr-1" style="border-radius: 10px">details</button>
-              <button class=" btn-outline-warning mr-1" style="border-radius: 10px"><i class="fas fa-edit"></i>
-                edit</button>
-              <button class="btn-danger mr-1" style="border-radius: 10px" data-toggle="modal"
-                data-whatever="@getbootstrap"><i class="far fa-trash-alt"></i> delete</button>
-            </td>
-          </tr>
-          <tr>
-            <td> acetic acid</td>
-            <td>7536353-4</td>
-            <td> C2h4O2</td>
-            <td> 11/11/2022</td>
-            <td class="col-1">
-              <button class=" btn-outline-info mr-1" style="border-radius: 10px">details</button>
-              <button class=" btn-outline-warning mr-1" style="border-radius: 10px"><i class="fas fa-edit"></i>
-                edit</button>
-              <button class="btn-danger mr-1" style="border-radius: 10px" data-toggle="modal"
-                data-whatever="@getbootstrap"><i class="far fa-trash-alt"></i> delete</button>
-            </td>
-          </tr>
+          {% endfor %}
         </tbody>
       </table>
     </div>

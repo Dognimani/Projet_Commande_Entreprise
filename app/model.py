@@ -64,6 +64,12 @@ class User(Base):
     password =Column(String(255))
     Created_date=Column(DateTime, default= datetime.datetime.utcnow)
 
+class Resultat(Base):
+    __tablename__ ='resultats'
+    id=Column(Integer,primary_key=True)
+    Toxicity_Type=Column(String(255))
+    value=Column(String(255)) # pas sûr que ce soit String(255) mais plutôt text
+    CAS_Number=Column(String(255))
 # Create the tables in the database
 Base.metadata.create_all(engine)
 

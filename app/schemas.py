@@ -2,7 +2,7 @@ from typing import List, Optional, Generic, TypeVar
 import datetime
 from pydantic import BaseModel, Field,EmailStr
 from pydantic.generics import GenericModel
-
+from fastapi import Form
 
 T = TypeVar('T')
 
@@ -35,8 +35,8 @@ class ResultSchema(BaseModel):
     value : str 
     CAS_Number : str
     
-#class RequestResult():
-    #: ResultSchema = Field(...)
+class RequestResult(BaseModel):
+    parameter: ResultSchema = Form(...)
 
 
 
