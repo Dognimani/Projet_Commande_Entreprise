@@ -16,14 +16,8 @@ app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static") # specification of the folder of static files (css and js)
 templates = Jinja2Templates(directory="templates") # specification of the folder of templates (html)
 
-@app.get('/')
-async def Home():
-    return "Hello world"
-
-
 
 # road for the  molecule registration
-
 @app.get("/MoleculeCreate/", response_class=HTMLResponse)
 async def band(request: Request):
     return templates.TemplateResponse("MoleculeCreate.html", {"request": request})    
@@ -39,6 +33,13 @@ async def band(request: Request):
 @app.get("/ViewMolecule/", response_class=HTMLResponse)
 async def band(request: Request):
     return templates.TemplateResponse("ViewMolecule.html", {"request": request})      
+
+
+# road for seeing details of a specific molecule
+
+@app.get("/", response_class=HTMLResponse)
+async def band(request: Request):
+    return templates.TemplateResponse("Register.html", {"request": request})      
 
 @app.get("/test/", response_class=HTMLResponse)
 async def band(request: Request):

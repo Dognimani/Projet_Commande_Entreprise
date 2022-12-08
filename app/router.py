@@ -139,6 +139,5 @@ async def delete(id:int,db:Session=Depends(get_db)):
 async def read_molecules(request: Request, db:Session=Depends(get_db)):
     molecules=db.query(Molecule).offset(0).limit(4).all()
     pprint(molecules)
-    print("je passe par là")
     return templates.TemplateResponse("List.html", {"request": request,"molecules":molecules})  
 
