@@ -1,0 +1,12 @@
+body {
+    padding-top: 90px;
+}
+
+.form-signup {
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+.form-signup .image {
+    text-align: center;
+}
