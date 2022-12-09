@@ -52,7 +52,7 @@
           <h4>Liste des molecules </h4>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="http://localhost:8000/MoleculeCreate">
+          <a href="http://localhost:8000/MoleculeRegister/">
             <button type="button" class="btn btn-outline-info ml-5 " style="border-radius: 10px; background-color: rgb(0, 83, 159); color: white;" data-toggle="modal"  data-target="#DistributionVersement">
               <i class="fas fa-plus-circle w-100"></i>
           </button>
@@ -86,13 +86,16 @@
             <td> {{molecule.Name}}</td>
             <td> {{molecule.CAS_Number}}</td>
             <td>{{molecule.Canonical_Formula}}</td>
-            <td> 11/11/2022</td>
+            <td> {{molecule.Created_date}}</td>
             <td class="col-1">
               <button class=" btn-outline-info mr-1" style="border-radius: 10px">details</button>
               <button class=" btn-outline-warning mr-1" style="border-radius: 10px"><i class="fas fa-edit"></i>
                 edit</button>
-              <button class="btn-danger mr-1" style="border-radius: 10px" data-toggle="modal"
-                data-whatever="@getbootstrap"><i class="far fa-trash-alt"></i> delete</button>
+              <button class="btn-danger mr-1" style="border-radius: 10px" data-toggle="modal" data-whatever="@getbootstrap">
+                <a href="http://localhost:8000/delete/{{molecule.CAS_Number}}">
+                <i class="far fa-trash-alt"></i> delete
+                </a>
+              </button>
             </td>
           </tr>
           {% endfor %}

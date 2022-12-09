@@ -34,12 +34,7 @@ async def band(request: Request):
 async def band(request: Request):
     return templates.TemplateResponse("ViewMolecule.html", {"request": request})      
 
-
-# road for seeing details of a specific molecule
-
-@app.get("/", response_class=HTMLResponse)
-async def band(request: Request):
-    return templates.TemplateResponse("Register.html", {"request": request})      
+     
 
 @app.get("/test/", response_class=HTMLResponse)
 async def band(request: Request):

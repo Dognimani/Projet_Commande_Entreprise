@@ -59,10 +59,11 @@ referencements = Table('referencements', Base.metadata,
 
 class User(Base):
     __tablename__="users"
-    username = Column(String(255))
-    email = Column(String(255),primary_key=True)
-    password =Column(String(255))
-    Created_date=Column(DateTime, default= datetime.datetime.utcnow)
+    Firstname = Column(String(255))
+    Lastname =Column(String(255))
+    Email = Column(String(255),primary_key=True)
+    Password =Column(String(255))
+    Created_at=Column(DateTime, default= datetime.datetime.utcnow)
 
 class Resultat(Base):
     __tablename__ ='resultats'

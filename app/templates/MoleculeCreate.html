@@ -16,7 +16,6 @@
 
   <title>Checkout</title>
 </head>
-
 <body>
   <nav class="navbar navbar-dark" style="background-color: rgb(0, 83, 159)">
     <a class="navbar-brand" href="#">BioSolutions</a>
@@ -37,8 +36,8 @@
   </nav>
   <!-- logo insignts biosolutions -->
   <div class="py-2 text-center">
-    <img class="d-block mx-auto mb-4" src="./../static/logo-IBSF.png" width="120" height="120">
-
+    <img class="d-block mx-auto mb-4" src="./../static/logo-IBSF.png"  width="120" height="120">
+    
     <h2 style="color: rgb(0, 83, 159)">Checkout form</h2>
   </div>
   <!-- FORM  -->
@@ -426,11 +425,16 @@
           <h3 class="card-title m-0">REFERENCE</h3>
         </div>
         <div class="card-body">
-          <div class="controls">
-            <a href="##" id="add_references"><i class="fa fa-plus"></i>Add a Reference</a>
-          </div>
-          <div class="inp-group">
-          </div>
+          <button type="button" onclick="addReference()"
+            style="background-color: rgb(223, 246, 255); color: rgb(0, 83, 159);">Add a
+            Reference</button>
+          <!-- <div class="row  mt-4 mb-2">
+            <div class="col-md-4 mb-3">
+              <div class="form-group">
+                <label for="Reference  ">Reference </label>
+                <textarea class="form-control" rows="3" placeholder="WriteSomething.."></textarea>
+              </div>
+            </div> -->
         </div>
       </div>
   </div>
@@ -482,46 +486,9 @@
         }, false);
       })();
 
-    //================Add or Remove references : Dynamic input fields==================//
-    const add_references = document.getElementById('add_references');
-    // const remove_references = document.getElementById('remove_references');
-
-    const input = document.querySelector(".inp-group");
-
-    add_references.addEventListener("click", addReference);
-
-    //Remove References
-    function removeReference() {
-      this.parentElement.remove();
-    }
-
-    //Add References
+    //Add a reference
     function addReference() {
-      const reference_number = document.createElement('input');
-      reference_number.type = "number";
-      reference_number.className = "reference_number";
-      reference_number.placeholder = "Add a reference number";
-
-      const reference = document.createElement("input");
-      reference.type = "text";
-      reference.className = "reference";
-      reference.placeholder = "Add an article or URL";
-
-      const remove_reference = document.createElement("a");
-      remove_reference.className = "remove_reference";
-      remove_reference.innerHTML = "<span style='color: #fff'>&times</span>";
-
-      remove_reference.addEventListener("click", removeReference);
-
-      const flex = document.createElement("div");
-      flex.className = "flex";
-
-      input.appendChild(flex);
-      flex.appendChild(reference_number);
-      flex.appendChild(reference);
-      flex.appendChild(remove_reference);
     }
-
   </script>
 </body>
 
