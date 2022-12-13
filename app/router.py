@@ -3,8 +3,8 @@ from config import SessionLocal
 from sqlalchemy.orm import Session
 from schemas import MoleculeSchema,ReferenceSchema,ResultSchema,RequestResult,Response
 import crud
-from model import Resultat,Molecule,User
-from passlib.hash import sha256_crypt
+from model import Molecule,User #Resultat
+#from passlib.hash import sha256_crypt
 #prepa du front
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
@@ -27,21 +27,21 @@ def get_db():
 async def create(request:RequestResult):
     return {"resquest":request}
 
-@router.post('/create')
-async def create(
-    Toxicity_Type:str = Form(),
-    value:str = Form(),
-    CAS_Number:str = Form(),
-    db:Session=Depends(get_db)
-    ):
-    resultat = Resultat(Toxicity_Type = Toxicity_Type, value = value,CAS_Number=CAS_Number)
-    db.add(resultat)
-    db.commit()
-    db.refresh
-    #crud.create_result(db,resultat)
-    #return templates.TemplateResponse("List.html", {"request": Request})
-    return Response(code=200,status="ok",message="result created successfully").dict(exclude_none=True)  
-    #return RedirectResponse("http://localhost:8000/")
+# @router.post('/create')
+# async def create(
+#     Toxicity_Type:str = Form(),
+#     value:str = Form(),
+#     CAS_Number:str = Form(),
+#     db:Session=Depends(get_db)
+#     ):
+#     resultat = Resultat(Toxicity_Type = Toxicity_Type, value = value,CAS_Number=CAS_Number)
+#     db.add(resultat)
+#     db.commit()
+# #     db.refresh
+#     #crud.create_result(db,resultat)
+#     #return templates.TemplateResponse("List.html", {"request": Request})
+#     return Response(code=200,status="ok",message="result created successfully").dict(exclude_none=True)  
+#     #return RedirectResponse("http://localhost:8000/")
 
 # road for the  molecule registration
 @router.get("/MoleculeRegister/", response_class=HTMLResponse)
@@ -138,19 +138,19 @@ async def delete(request:Request,CAS_Number:str,db:Session=Depends(get_db)):
     return templates.TemplateResponse("List.html", {"request": request,"molecules":molecules})  
 
 
-@router.get('/delete_resultat/{id}')
-async def delete(request:Request,id:str,db:Session=Depends(get_db)):
-    print(id)
-    _resultat=db.get(Resultat).filter(Resultat.id==id).first()
-    #hero = db.get(Resultat,id)
-    #if not hero:
-        #raise HTTPException(status_code=404, detail="Hero not found")
-    print(_resultat.value)    
-    db.execute(_resultat)
-    db.commit
-    db.refresh
-    molecules=db.query(Molecule).offset(0).limit(4).all()
-    return templates.TemplateResponse("List.html", {"request": request,"molecules":molecules}) 
+# @router.get('/delete_resultat/{id}')
+# async def delete(request:Request,id:str,db:Session=Depends(get_db)):
+#     print(id)
+#     _resultat=db.get(Resultat).filter(Resultat.id==id).first()
+#     #hero = db.get(Resultat,id)
+#     #if not hero:
+#         #raise HTTPException(status_code=404, detail="Hero not found")
+#     print(_resultat.value)    
+#     db.execute(_resultat)
+#     db.commit
+#     db.refresh
+#     molecules=db.query(Molecule).offset(0).limit(4).all()
+#     return templates.TemplateResponse("List.html", {"request": request,"molecules":molecules}) 
 
 # les routes de base en get
 

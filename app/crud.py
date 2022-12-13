@@ -1,23 +1,23 @@
 from sqlalchemy.orm import Session
-from model import Molecule,Result,Reference,Resultat
+from model import Molecule,Result,Reference #Resultat
 from schemas import MoleculeSchema,ReferenceSchema,ResultSchema
 import datetime
 
 # get 100 first results
-def get_result(db:Session,skip:int=0,limit:int=100):
-    return db.query(Result).offset(skip).limit(limit).all()
+# def get_result(db:Session,skip:int=0,limit:int=100):
+#     return db.query(Result).offset(skip).limit(limit).all()
 
 # get a result by its id   
-def get_result_by_id(db:Session,result_id:int):
-    return db.query(Result).filter(Result.id==result_id).first()
+# def get_result_by_id(db:Session,result_id:int):
+#     return db.query(Result).filter(Result.id==result_id).first()
 
 # create a result    
-def create_result(db:Session,result):
-    result = Resultat(Toxicity_Type =result.Toxicity_Type, value = result.value,CAS_Number=result.CAS_Number)
-    db.add(result)      
-    db.commit
-    db.refresh
-    return result
+# def create_result(db:Session,result):
+#     result = Resultat(Toxicity_Type =result.Toxicity_Type, value = result.value,CAS_Number=result.CAS_Number)
+#     db.add(result)      
+#     db.commit
+#     db.refresh
+#     return result
 
 # remove or delete a result    
 def remove_result(db:Session,result_id:int):

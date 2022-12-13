@@ -18,9 +18,9 @@ templates = Jinja2Templates(directory="templates") # specification of the folder
 
 
 # road for the  molecule registration
-@app.get("/MoleculeCreate/", response_class=HTMLResponse)
-async def band(request: Request):
-    return templates.TemplateResponse("MoleculeCreate.html", {"request": request})    
+# @app.get("/MoleculeCreate/", response_class=HTMLResponse)
+# async def band(request: Request):
+#     return templates.TemplateResponse("MoleculeCreate.html", {"request": request})    
 
 # road for the authentication
 
