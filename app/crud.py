@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from model import Molecule,Result,Reference
+from model import Molecule,Result,Reference,Resultat
 from schemas import MoleculeSchema,ReferenceSchema,ResultSchema
 import datetime
 
@@ -12,12 +12,12 @@ def get_result_by_id(db:Session,result_id:int):
     return db.query(Result).filter(Result.id==result_id).first()
 
 # create a result    
-def create_result(db:Session,result:ResultSchema):
-    _result=Result(Toxicity_Type=result.Toxicity_Type,value=result.value,CAS_Number=result.CAS_Number,Created_date=result.Created_date)  
-    db.add(_result)      
+def create_result(db:Session,result):
+    result = Resultat(Toxicity_Type =result.Toxicity_Type, value = result.value,CAS_Number=result.CAS_Number)
+    db.add(result)      
     db.commit
     db.refresh
-    return _result
+    return result
 
 # remove or delete a result    
 def remove_result(db:Session,result_id:int):

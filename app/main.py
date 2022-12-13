@@ -6,7 +6,7 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from starlette.templating import Jinja2Templates
 
-#import router
+import router
 
 model.Base.metadata.create_all(bind=engine)
 
@@ -20,16 +20,13 @@ templates = Jinja2Templates(directory="templates") # specification of the folder
 async def Home():
     return "Hello world"
 
-# road for the list of molecule
-@app.get("/List/", response_class=HTMLResponse)
-async def read_item(request: Request):
-    return templates.TemplateResponse("List.html", {"request": request})
+
 
 # road for the  molecule registration
 
-@app.get("/band/", response_class=HTMLResponse)
+@app.get("/MoleculeCreate/", response_class=HTMLResponse)
 async def band(request: Request):
-    return templates.TemplateResponse("band.html", {"request": request})    
+    return templates.TemplateResponse("MoleculeCreate.html", {"request": request})    
 
 # road for the authentication
 
@@ -43,7 +40,10 @@ async def band(request: Request):
 async def band(request: Request):
     return templates.TemplateResponse("ViewMolecule.html", {"request": request})      
 
+@app.get("/test/", response_class=HTMLResponse)
+async def band(request: Request):
+    return templates.TemplateResponse("test.html", {"request": request})     
+
 
 #Create a molecule
-    
-#app.include_router(router.router,prefix="/result",tags=["result"])
+app.include_router(router.router,prefix="",tags=["result"])

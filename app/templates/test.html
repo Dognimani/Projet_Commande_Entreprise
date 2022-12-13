@@ -17,21 +17,35 @@
   <title>Checkout</title>
 </head>
 <body>
-    <form action="http://localhost:8000/test">
-        <div class="row  mt-4 mb-2">
-            <div class="col-md-6 mb-3">
-              <div class="form-group">
-                <label for="EyeIrritation ">email </label>
-                <input class="form-control" name="email" />
-              </div>
-            </div>
-            <div class="col-md-6 mb-3">
-              <div class="form-group">
-                <label for="SkinSensitisation  ">password </label>
-                <input class="form-control" name="password"/>
-              </div>
-            </div>
+    <form action="http://localhost:8000/create/" method="post">
+      <div class="row  mt-4 mb-2">
+        <div class="col-md-6 mb-3">
+          <div class="form-group">
+            <label for="EyeIrritation ">Toxicity_Type </label>
+            <input class="form-control" name="Toxicity_Type" />
           </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <div class="form-group">
+            <label for="SkinSensitisation  ">value </label>
+            <input class="form-control" name="value"/>
+          </div>
+        </div>
+      </div>
+      <div class="row  mt-4 mb-2">
+        <div class="col-md-6 mb-3">
+          <div class="form-group">
+            <label for="EyeIrritation ">CAS_Number </label>
+            <input class="form-control" name="CAS_Number" />
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <div class="form-group">
+            <label for="SkinSensitisation  ">password </label>
+            <input class="form-control" name="password"/>
+          </div>
+        </div>
+      </div>
           <button type="submit">envoyer</button>
     </form>
 </body>
