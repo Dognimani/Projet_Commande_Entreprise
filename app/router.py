@@ -3,7 +3,7 @@ from config import SessionLocal
 from sqlalchemy.orm import Session
 from schemas import MoleculeSchema,ReferenceSchema,ResultSchema,RequestResult,Response
 import crud
-from model import Molecule,User #Resultat
+from model import Molecule,User, Result
 #from passlib.hash import sha256_crypt
 #prepa du front
 from fastapi.responses import HTMLResponse
@@ -27,21 +27,6 @@ def get_db():
 async def create(request:RequestResult):
     return {"resquest":request}
 
-# @router.post('/create')
-# async def create(
-#     Toxicity_Type:str = Form(),
-#     value:str = Form(),
-#     CAS_Number:str = Form(),
-#     db:Session=Depends(get_db)
-#     ):
-#     resultat = Resultat(Toxicity_Type = Toxicity_Type, value = value,CAS_Number=CAS_Number)
-#     db.add(resultat)
-#     db.commit()
-# #     db.refresh
-#     #crud.create_result(db,resultat)
-#     #return templates.TemplateResponse("List.html", {"request": Request})
-#     return Response(code=200,status="ok",message="result created successfully").dict(exclude_none=True)  
-#     #return RedirectResponse("http://localhost:8000/")
 
 # road for the  molecule registration
 @router.get("/MoleculeRegister/", response_class=HTMLResponse)
@@ -101,58 +86,89 @@ async def MoleculeCreate(
     db.commit()
     db.refresh
     molecules=db.query(Molecule).offset(0).limit(4).all()
-    #crud.create_result(db,resultat)
-    #return Response(code=200,status="ok",message="result created successfully").dict(exclude_none=True)
     return templates.TemplateResponse("List.html", {"request": request,"molecules":molecules})  
-    #return RedirectResponse("http://localhost:8000/")
 
 
-@router.get('/tttttttttt')
-async def get(db:Session=Depends(get_db)):
-    _result=crud.get_result(db,0,100)
-    return Response(code=200,status="ok",message="succes fetch all data",result=_result).dict(exclude_none=True)
 
-@router.get('/{id}')
-async def get_by_id(id:int,db:Session=Depends(get_db)):
-    _result=crud.get_result_by_id(db,id)    
-    return Response(code=200,status="ok",message="succes get data",result=_result).dict(exclude_none=True)
+@router.get('/GetMoleculeToUpdate/{CAS_Number}',response_class=HTMLResponse)
+async def get_by_id(request:Request,CAS_Number:str,db:Session=Depends(get_db)):
+    molecule= db.query(Molecule).filter(Molecule.CAS_Number==CAS_Number).first()
+    #_result=crud.get_result_by_id(db,id)    
+    return templates.TemplateResponse("MoleculeUpdate.html", {"request": request,"molecule":molecule})  
 
-@router.post('/update/{id}')
-async def update(request:RequestResult,db:Session=Depends(get_db)):
-    _result=crud.update_result(db,id=request.parameter.id,Toxicity_Type=request.parameter.Toxicity_Type,value=request.parameter.value,CAS_Number=request.parameter.CAS_Number)
-    return Response(code=200,status="ok",message="succes update data",result=_result).dict(exclude_none=True)
+# update the a specific molecule
+@router.post('/MoleculeUpdate/{CAS_Number_param}')
+async def update(
+    request:Request,
+    CAS_Number_param :str,
+    CAS_Number: str =Form(),
+    Name: str =Form(),      
+    Canonical_Formula: str =Form(),  
+    Molecular_Weight: float =Form(),           
+    XLogP3: float =Form(),           
+    HydrogenBondDonorCount: float =Form(),           
+    HydrogenBondAcceptorCount: float =Form(),           
+    Rotatable_Bond_Count: float =Form(),           
+    ExactMass: float =Form(),           
+    MonoisotopicMass: float =Form(),           
+    TopologicalPolarSurfaceArea: float =Form(),           
+    Heavy_Atom_Count: float =Form(),           
+    Formal_Charge: float =Form(),           
+    Complexity: float =Form(),           
+    Isotope_Atom_Count: float =Form(),           
+    Undefined_Atom_Stereocenter_Count: float =Form(),           
+    Defined_Bond_Stereocenter_Count: float =Form(),           
+    Undefined_Bond_Stereocenter_Count: float =Form(),           
+    Covalently_Bonded_Unit_Count: float =Form(),           
+    Compound_Is_Canonicalized: bool =Form(),   
+    db:Session=Depends(get_db)
+):
+    molecule=db.query(Molecule).filter(Molecule.CAS_Number==CAS_Number_param).first()
 
+    molecule.CAS_Number =CAS_Number,
+    molecule.Name = Name    ,
+    molecule.Canonical_Formula = Canonical_Formula,
+    molecule.Molecular_Weight =Molecular_Weight,           
+    molecule.XLogP3 =XLogP3,           
+    molecule.HydrogenBondDonorCount =HydrogenBondDonorCount,           
+    molecule.HydrogenBondAcceptorCount =HydrogenBondAcceptorCount,           
+    molecule.Rotatable_Bond_Count =Rotatable_Bond_Count,           
+    molecule.ExactMass = ExactMass,           
+    molecule.MonoisotopicMass = MonoisotopicMass,           
+    molecule.TopologicalPolarSurfaceArea = TopologicalPolarSurfaceArea,           
+    molecule.Heavy_Atom_Count =Heavy_Atom_Count,           
+    molecule.Formal_Charge =Formal_Charge,           
+    molecule.Complexity =Complexity,           
+    molecule.Isotope_Atom_Count =Isotope_Atom_Count,           
+    molecule.Undefined_Atom_Stereocenter_Count =Undefined_Atom_Stereocenter_Count,           
+    molecule.Defined_Bond_Stereocenter_Count =Defined_Bond_Stereocenter_Count,           
+    molecule.Undefined_Bond_Stereocenter_Count =Undefined_Bond_Stereocenter_Count,           
+    molecule.Covalently_Bonded_Unit_Count = Covalently_Bonded_Unit_Count,           
+    molecule.Compound_Is_Canonicalized = Compound_Is_Canonicalized
 
-@router.get('/delete/{CAS_Number}')
-async def delete(request:Request,CAS_Number:str,db:Session=Depends(get_db)):
-    print(CAS_Number)
-    #_resultat=db.query(Molecule).filter(Molecule.CAS_Number==CAS_Number).first()
-    hero = db.get(Molecule,CAS_Number)
-    if not hero:
-        raise HTTPException(status_code=404, detail="Hero not found")
-    db.delete(hero)
-    print(hero.Covalently_Bonded_Unit_Count)
-    db.commit
-    db.refresh
+    db.commit()
+    db.refresh(molecule) 
     molecules=db.query(Molecule).offset(0).limit(4).all()
     return templates.TemplateResponse("List.html", {"request": request,"molecules":molecules})  
 
 
-# @router.get('/delete_resultat/{id}')
-# async def delete(request:Request,id:str,db:Session=Depends(get_db)):
-#     print(id)
-#     _resultat=db.get(Resultat).filter(Resultat.id==id).first()
-#     #hero = db.get(Resultat,id)
-#     #if not hero:
-#         #raise HTTPException(status_code=404, detail="Hero not found")
-#     print(_resultat.value)    
-#     db.execute(_resultat)
-#     db.commit
-#     db.refresh
-#     molecules=db.query(Molecule).offset(0).limit(4).all()
-#     return templates.TemplateResponse("List.html", {"request": request,"molecules":molecules}) 
+@router.get('/MoleculeDetails/{CAS_Number}', response_class=HTMLResponse)
+async def GetMoleculeDetails(request:Request,CAS_Number:str,db:Session=Depends(get_db)):
+    molecule=db.query(Molecule).filter(Molecule.CAS_Number==CAS_Number).first()
+    return templates.TemplateResponse("MoleculeDetails.html", {"request": request,"molecule":molecule})  
 
-# les routes de base en get
+
+@router.get('/DeleteMolecule/{CAS_Number}', response_class=HTMLResponse)
+async def delete(request:Request,CAS_Number:str,db:Session=Depends(get_db)):
+    print(CAS_Number)
+    
+    db.query(Result).filter(Result.CAS_Number==CAS_Number).delete()
+    db.query(Molecule).filter(Molecule.CAS_Number==CAS_Number).delete()
+    #print(molecule.CAS_Number)
+    #db.delete(molecule)
+    db.commit
+    molecules=db.query(Molecule).offset(0).limit(4).all()
+    return templates.TemplateResponse("List.html", {"request": request,"molecules":molecules})  
 
 
 
@@ -161,6 +177,15 @@ async def delete(request:Request,CAS_Number:str,db:Session=Depends(get_db)):
 async def read_molecules(request: Request, db:Session=Depends(get_db)):
     molecules=db.query(Molecule).offset(0).limit(4).all()
     return templates.TemplateResponse("List.html", {"request": request,"molecules":molecules})  
+
+
+
+
+
+
+
+
+
 
 #user part
 #create an user
@@ -202,3 +227,36 @@ async def UserAuthentification(
         return templates.TemplateResponse("List.html", {"request": request,"molecules":molecules})
     else:
         return templates.TemplateResponse("authentication.html", {"request": request})  
+
+
+#result part
+#create an user
+# insertion of results part
+@router.get('/ToxicologicalProfil/',response_class=HTMLResponse)
+async def get_ToxicologicalProfil(request:Request,db:Session=Depends(get_db)):
+    molecules=db.query(Molecule).all()
+    return templates.TemplateResponse("ToxicologicalProfil.html", {"request": request,"molecules":molecules})  
+
+@router.post('/ResultCreate/',response_class=HTMLResponse)
+async def ResultCreate(
+    request:Request,
+    CAS_Number:str=Form(),
+    Toxicity_Type:str=Form(),
+    value:str=Form(),
+    safe_or_not:str=Form(),
+    comment:str=Form(),
+    db:Session=Depends(get_db)
+    ):
+    result=Result(
+    CAS_Number=CAS_Number,
+    Toxicity_Type=Toxicity_Type,
+    value=value,
+    safe_or_not=safe_or_not,
+    comment=comment
+    )
+    print(safe_or_not)
+    db.add(result)
+    db.commit()
+    db.refresh(result)
+    molecules=db.query(Molecule).all()
+    return templates.TemplateResponse("ToxicologicalProfil.html", {"request": request,"molecules":molecules})    

@@ -35,8 +35,10 @@ class Result(Base):
     id=Column(Integer,primary_key=True)
     Toxicity_Type=Column(String(255))
     value=Column(String(255)) # pas sûr que ce soit String(255) mais plutôt text
+    safe_or_not=Column(String(255))
+    comment=Column(String(255))
     CAS_Number=Column(String(255),ForeignKey("molecules.CAS_Number")) #  la clé étrangère
-    Created_date=Column(DateTime, default= datetime.datetime.utcnow)
+    Created_at=Column(DateTime, default= datetime.datetime.utcnow)
     molecules = relationship("Molecule",back_populates="results") # mapping de la clé étrangère venant de la table molécule
     references=relationship("Reference" , secondary="referencements", back_populates="results")
 

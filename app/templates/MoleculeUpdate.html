@@ -28,8 +28,8 @@
         <li class="nav-item active">
           <a class="nav-link" href="http://localhost:8000/MoleculeRegister/">ADD COMPONENT <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="http://localhost:8000/List/">LIST PAGE</a>
+        <li class="nav-item">
+          <a class="nav-link active" href="http://localhost:8000/List/">List page</a>
         </li>
       </ul>
     </div>
@@ -42,7 +42,7 @@
   </div>
   <!-- FORM  -->
   <div class="col-md-10 offset-1">
-    <form action="http://localhost:8000/MoleculeCreate/" method="post">
+    <form action="http://localhost:8000/MoleculeUpdate/{{molecule.CAS_Number}}" method="post">
       <!-- Component identification section-->
       <div class="card card-primary card-outline">
         <div class="card-header" style="background-color: rgb(0, 83, 159); color: white;">
@@ -52,7 +52,7 @@
           <div class="row  mt-4 mb-2">
             <div class="col-md-4 mb-3">
               <label for="Name">Name</label>
-              <input type="text"name="Name"  class="form-control" id="Name" placeholder="Name" value="" >
+              <input type="text"name="Name"  class="form-control" id="Name"  value="{{molecule.Name}}">
               <div class="invalid-feedback">
                 Name is required.
               </div>
@@ -61,7 +61,7 @@
             <div class="col-md-4 mb-3">
               <label for="CanonicalFormula">Canonical Formula</label>
               <div class="input-group">
-                <input type="text" name="Canonical_Formula" class="form-control" id="CanonicalFormula" placeholder="CanonicalFormula" >
+                <input type="text" name="Canonical_Formula" class="form-control" id="CanonicalFormula" value="{{molecule.Canonical_Formula}}">
                 <div class="invalid-feedback" style="width: 100%;">
                   Your Canonical Formula is required.
                 </div>
@@ -70,7 +70,7 @@
 
             <div class="col-md-4 mb-3">
               <label for="cas">CAS Number</label>
-              <input name="CAS_Number" type="cas" class="form-control" id="cas" placeholder="CAS_Number" >
+              <input name="CAS_Number" type="cas" class="form-control" id="cas"  value="{{molecule.CAS_Number}}">
               <div class="invalid-feedback" style="width: 100%;">
                 Your cas number is required.
               </div>
@@ -90,7 +90,7 @@
           <div class="row  mt-4 mb-2">
             <div class="col-md-4 mb-3">
               <label for="MolecularWeight">Molecular Weight</label>
-              <input name="Molecular_Weight" type="text" class="form-control" id="MolecularWeight" placeholder="MolecularWeight" >
+              <input name="Molecular_Weight" type="text" class="form-control" id="MolecularWeight"  value="{{molecule.Molecular_Weight}}">
               <div class="invalid-feedback">
                 Please enter the Molecular Weight.
               </div>
@@ -98,14 +98,14 @@
 
             <div class="col-md-4 mb-3">
               <label for="XLogP3">XLogP3</label>
-              <input name="XLogP3" type="text" class="form-control" id="XLogP3" placeholder="XLogP3" >
+              <input name="XLogP3" type="text" class="form-control" id="XLogP3" placeholder="XLogP3" value="{{molecule.XLogP3}}">
               <div class="invalid-feedback">
                 Please enter XLogP3.
               </div>
             </div>
             <div class="col-md-4 mb-3">
               <label for="HydrogenBondDonorCount">Hydrogen Bond Donor Count</label>
-              <input name="HydrogenBondDonorCount" type="text" class="form-control" id="HydrogenBondDonorCount" placeholder="HydrogenBondDonorCount">
+              <input name="HydrogenBondDonorCount" type="text" class="form-control" id="HydrogenBondDonorCount" value="{{molecule.HydrogenBondDonorCount}}">
               <div class="invalid-feedback">
                 Please enter Hydrogen Bond Donor Count.
               </div>
@@ -116,22 +116,21 @@
           <div class="row  mt-4 mb-2">
             <div class="col-md-4 mb-3">
               <label for="HydrogenBondAcceptorCount">Hydrogen Bond Acceptor Count</label>
-              <input name="HydrogenBondAcceptorCount" type="text" class="form-control" id="HydrogenBondAcceptorCount"
-                placeholder="HydrogenBondAcceptorCount" >
+              <input name="HydrogenBondAcceptorCount" type="text" class="form-control" id="HydrogenBondAcceptorCount" value="{{molecule.HydrogenBondAcceptorCount}}" >
               <div class="invalid-feedback">
                 Please enter Hydrogen Bond Acceptor Count.
               </div>
             </div>
             <div class="col-md-4 mb-3">
               <label for="Rotatable_Bond_Count">Rotatable Bond Count</label>
-              <input name="Rotatable_Bond_Count" type="text" class="form-control" id="Rotatable_Bond_Count" placeholder="RotatableBondCount" >
+              <input name="Rotatable_Bond_Count" type="text" class="form-control" id="Rotatable_Bond_Count" value="{{molecule.Rotatable_Bond_Count}}" >
               <div class="invalid-feedback">
                 Please enter Rotatable Bond Count.
               </div>
             </div>
             <div class="col-md-4 mb-3">
               <label for="ExactMass">Exact Mass</label>
-              <input name="ExactMass" type="text" class="form-control" id="ExactMass" placeholder="ExactMass" >
+              <input name="ExactMass" type="text" class="form-control" id="ExactMass" value="{{molecule.ExactMass}}">
               <div class="invalid-feedback">
                 Please enter Exact Mass.
               </div>
@@ -142,7 +141,7 @@
           <div class="row  mt-4 mb-2">
             <div class="col-md-4 mb-3">
               <label for="MonoisotopicMass">Monoisotopic Mass</label>
-              <input name="MonoisotopicMass" type="text" class="form-control" id="MonoisotopicMass" placeholder="MonoisotopicMass" >
+              <input name="MonoisotopicMass" type="text" class="form-control" id="MonoisotopicMass" value="{{molecule.MonoisotopicMass}}" >
               <div class="invalid-feedback">
                 Please enter Monoisotopic Mass.
               </div>
@@ -150,8 +149,7 @@
 
             <div class="col-md-4 mb-3">
               <label for="TopologicalPolarSurfaceArea">Topological Polar Surface Area</label>
-              <input name="TopologicalPolarSurfaceArea" type="text" class="form-control" id="TopologicalPolarSurfaceArea"
-                placeholder="TopologicalPolarSurfaceArea" >
+              <input name="TopologicalPolarSurfaceArea" type="text" class="form-control" id="TopologicalPolarSurfaceArea" value="{{molecule.TopologicalPolarSurfaceArea}}" >
               <div class="invalid-feedback">
                 Please enter Topological Polar Surface Area.
               </div>
@@ -159,7 +157,7 @@
 
             <div class="col-md-4 mb-3">
               <label for="Heavy_Atom_Count">Heavy Atom Count</label>
-              <input name="Heavy_Atom_Count" type="text" class="form-control" id="Heavy_Atom_Count" placeholder="HeavyAtomCount" >
+              <input name="Heavy_Atom_Count" type="text" class="form-control" id="Heavy_Atom_Count" value="{{molecule.Heavy_Atom_Count}}" >
               <div class="invalid-feedback">
                 Please enter Heavy Atom Count.
               </div>
@@ -170,7 +168,7 @@
           <div class="row  mt-4 mb-2">
             <div class="col-md-4 mb-3">
               <label for="Formal Charge">Formal Charge</label>
-              <input name="Formal_Charge" type="text" class="form-control" id="Formal_Charge" placeholder="FormalCharge" >
+              <input name="Formal_Charge" type="text" class="form-control" id="Formal_Charge" value="{{molecule.Formal_Charge}}" >
               <div class="invalid-feedback">
                 Please enter Formal Charge.
               </div>
@@ -178,7 +176,7 @@
 
             <div class="col-md-4 mb-3">
               <label for="Complexity">Complexity</label>
-              <input name="Complexity" type="text" class="form-control" id="Complexity" placeholder="Complexity" >
+              <input name="Complexity" type="text" class="form-control" id="Complexity" value="{{molecule.Complexity}}">
               <div class="invalid-feedback">
                 Please enter Complexity.
               </div>
@@ -186,7 +184,7 @@
 
             <div class="col-md-4 mb-3">
               <label for="Isotope_Atom_Count">Isotope Atom Count</label>
-              <input name="Isotope_Atom_Count" type="text" class="form-control" id="Isotope_Atom_Count" placeholder="IsotopeAtomCount" >
+              <input name="Isotope_Atom_Count" type="text" class="form-control" id="Isotope_Atom_Count" value="{{molecule.Isotope_Atom_Count}}" >
               <div class="invalid-feedback">
                 Please enter Isotope Atom Count.
               </div>
@@ -197,8 +195,7 @@
           <div class="row  mt-4 mb-2">
             <div class="col-md-4 mb-3">
               <label for="Undefined_Atom_Stereocenter_Count">Defined Atom Stereocenter Count</label>
-              <input name="Undefined_Atom_Stereocenter_Count" type="text" class="form-control" id="Undefined_Atom_Stereocenter_Count"
-                placeholder="DefinedAtomStereocenterCount" >
+              <input name="Undefined_Atom_Stereocenter_Count" type="text" class="form-control" id="Undefined_Atom_Stereocenter_Count"  value="{{molecule.Undefined_Atom_Stereocenter_Count}}">
               <div class="invalid-feedback">
                 Please enter Defined Atom Stereocenter Count.
               </div>
@@ -206,8 +203,7 @@
 
             <div class="col-md-4 mb-3">
               <label for="Undefined_Atom_Stereocenter_Count">Undefined Atom Stereocenter Count</label>
-              <input name="Undefined_Atom_Stereocenter_Count" type="text" class="form-control" id="UndefinedAtomStereocenterCount"
-                placeholder="UndefinedAtomStereocenterCount" >
+              <input name="Undefined_Atom_Stereocenter_Count" type="text" class="form-control" id="Undefined_Atom_Stereocenter_Count"  value="{{molecule.Undefined_Atom_Stereocenter_Count}}" >
               <div class="invalid-feedback">
                 Please enter Undefined Atom Stereocenter Count.
               </div>
@@ -215,8 +211,7 @@
 
             <div class="col-md-4 mb-3">
               <label for="Defined_Bond_Stereocenter_Count">Defined Bond Stereocenter Count</label>
-              <input name="Defined_Bond_Stereocenter_Count" type="text" class="form-control" id="Defined_Bond_Stereocenter_Count"
-                placeholder="DefinedBondStereocenterCount" >
+              <input name="Defined_Bond_Stereocenter_Count" type="text" class="form-control" id="Defined_Bond_Stereocenter_Count"  value="{{molecule.Defined_Bond_Stereocenter_Count}}">
               <div class="invalid-feedback">
                 Please enter Defined Bond Stereocenter Count.
               </div>
@@ -227,8 +222,7 @@
           <div class="row  mt-4 mb-2">
             <div class="col-md-4 mb-3">
               <label for="Undefined_Bond_Stereocenter_Count">Undefined Bond Stereocenter Count</label>
-              <input name="Undefined_Bond_Stereocenter_Count" type="text" class="form-control" id="Undefined_Bond_Stereocenter_Count"
-                placeholder="UndefinedBondStereocenterCount" >
+              <input name="Undefined_Bond_Stereocenter_Count" type="text" class="form-control" id="Undefined_Bond_Stereocenter_Count" value="{{molecule.Undefined_Bond_Stereocenter_Count}}" >
               <div class="invalid-feedback">
                 Please enter Undefined Bond Stereocenter Count.
               </div>
@@ -236,37 +230,45 @@
 
             <div class="col-md-4 mb-3">
               <label for="Covalently_Bonded_Unit_Count">Covalently-Bonded Unit Count</label>
-              <input name="Covalently_Bonded_Unit_Count" type="text" class="form-control" id="Covalently-Bonded Unit Count"
-                placeholder="Covalently-BondedUnitCount" required>
+              <input name="Covalently_Bonded_Unit_Count" type="text" class="form-control" id="Covalently-Bonded Unit Count"  value="{{molecule.Covalently_Bonded_Unit_Count}}">
               <div class="invalid-feedback">
                 Please enter Covalently-Bonded Unit Count.
               </div>
             </div>
             <div class="col-md-4">
-            <h class="mb-3">Compound Is Canonicalized</b>
-                <div class="d-block my-3">
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="Compound_Is_Canonicalized" id="inlineRadio1" value="True">
-                    <label class="form-check-label" for="inlineRadio1">Yes</label>
+              <h class="mb-3">Compound Is Canonicalized</b>
+                  <div class="d-block my-3">
+                    {% if molecule.Compound_Is_Canonicalized == True %}
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="Compound_Is_Canonicalized" id="inlineRadio1" value="True" checked>
+                      <label class="form-check-label" for="inlineRadio1">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="Compound_Is_Canonicalized" id="inlineRadio2" value="False">
+                      <label class="form-check-label" for="inlineRadio2">No</label>
+                    </div>
+                    {% else %}
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="Compound_Is_Canonicalized" id="inlineRadio1" value="True" >
+                      <label class="form-check-label" for="inlineRadio1">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="Compound_Is_Canonicalized" id="inlineRadio2" value="False" checked>
+                      <label class="form-check-label" for="inlineRadio2">No</label>
+                    </div>
+                    {% endif %}
                   </div>
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="Compound_Is_Canonicalized" id="inlineRadio2" value="False">
-                    <label class="form-check-label" for="inlineRadio2">No</label>
-                  </div>
-                </div>
-            </div>
+              </div>
           </div>
-
+          <td>
+            <button type="submit" style="background-color: rgb(0, 83, 159); color: white; text-align: center;"
+              class="btn btn-block btn-primary offset-md-8 col-md-3 mb-2 mt-5">submit</button>
+          </td>
         </div>
-      
-        <td>
-          <button type="submit" style="background-color: rgb(0, 83, 159); color: white; text-align: center;"
-            class="btn btn-block btn-primary offset-md-9 col-md-2 mb-4 mt-5">submit</button>
-        </td>
       </div>
-</form>
+    </form>
 
-<footer class="my-5 pt-5 text-muted text-center text-small">
+  <footer class="my-5 pt-5 text-muted text-center text-small">
     <p class="mb-1">&copy; 2022-2023 Insight BioSolutions</p>
     <ul class="list-inline">
       <li class="list-inline-item"><a href="#">Privacy</a></li>
@@ -286,32 +288,6 @@
     crossorigin="anonymous"></script>
   <script src="./../static/bootstrap.min.js"></script>
 
-  <script>
-      // Example starter JavaScript for disabling form submissions if there are invalid fields
-      (function () {
-        'use strict';
-
-        window.addEventListener('load', function () {
-          // Fetch all the forms we want to apply custom Bootstrap validation styles to
-          var forms = document.getElementsByClassName('needs-validation');
-
-          // Loop over them and prevent submission
-          var validation = Array.prototype.filter.call(forms, function (form) {
-            form.addEventListener('submit', function (event) {
-              if (form.checkValidity() === false) {
-                event.preventDefault();
-                event.stopPropagation();
-              }
-              form.classList.add('was-validated');
-            }, false);
-          });
-        }, false);
-      })();
-
-    //Add a reference
-    function addReference() {
-    }
-  </script>
 </body>
 
 </html>
