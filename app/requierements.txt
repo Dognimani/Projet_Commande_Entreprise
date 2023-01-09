@@ -1,6 +1,0 @@
-uvicorn
-pymsql
-sqlalchemy
-python-multipart
-psycopg2
-pydantic[email]

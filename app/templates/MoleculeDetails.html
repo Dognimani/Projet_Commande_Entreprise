@@ -159,19 +159,71 @@
           </div>
 
         </div>
-        <div class="row ">
-            <button class=" btn-success mr-1 offset-2 col-md-2  mb-3 mr-5" style="border-radius: 10px">
-              <a href="http://localhost:8000/ToxicologicalProfil/" method="get"      style="color: white">
-                Tox_Profile_Register
+        <button class=" mr-1 col-md-2 offset-2 mb-3 mr-5" style="border-radius: 10px ; background-color: rgb(0, 83, 159);">
+          <a href="http://localhost:8000/GetMoleculeToUpdate/{{molecule.CAS_Number}}" method="get"      style=" color: white">
+            <i class="fas fa-edit"></i> Edit properties
+          </a>
+      </button> 
+      </div> 
+
+      <div class="card row  col-md-12 mt-5 ml-2">
+        <!--la nav bar -->
+        <nav class="navbar navbar-expand navbar-light mt-0 ml-2  card-header card-info card-outline">
+          <!-- Left navbar links -->
+          <ul class="navbar-nav mt-2">
+            <li class="nav-item d-none d-sm-inline-block">
+              <h4>Toxicological profile </h4>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+              <a href="http://localhost:8000/ToxicologicalProfil/">
+                <button type="button" class="btn ml-5 " style="border-radius: 10px; background-color: rgb(0, 83, 159); color: white;" data-toggle="modal"  data-target="#DistributionVersement">
+                  <i class="fas fa-plus-circle w-100"></i>
+              </button>
               </a>
-          </button> 
-            <button class=" btn-warning mr-1 col-md-2 offset-2 mb-3 mr-5" style="border-radius: 10px">
-              <a href="http://localhost:8000/GetMoleculeToUpdate/{{molecule.CAS_Number}}" method="get"      style="color: rgb(50, 45, 45)">
-                <i class="fas fa-edit"></i> edit
-              </a>
-          </button> 
+            </li>
+          </ul>    
+        </nav>
+        <!--le tableau-->
+    <div class="row">
+      <table class="table table-hover text-nowrap mt-0 ml-4   card-header card-info card-outline ">
+        <thead class="bg" style="background-color: rgb(0, 83, 159); color: white;">
+          <tr>
+            <th scope="col">Result type</th>
+            <th scope="col">Safety</th>
+            <th scope="col">Created at</th>
+            <th scope="col">Actions</th>
+        </thead>
+        <tbody>
+          {% for result in resultats_associes %}
+          <tr>
+            <td> {{result.Toxicity_Type}}</td>
+            <td> {{result.safe_or_not}}</td>
+            <td>{{result.Created_at}}</td>
+            <td class="col-1">
+              <button class="btn-outline-primary mr-1" style="border-radius: 10px; color: white;" data-toggle="modal" data-whatever="@getbootstrap">
+                <a href="http://localhost:8000/ResultDetails/{{result.id}}" method="get" style="color: rgb(50, 45, 45)">
+                <i class="far fa-eye"></i> details
+                </a>
+              </button>
+              <button class=" btn-outline-warning mr-1" style="border-radius: 10px">
+                  <a href="http://localhost:8000/GetResultToUpdate/{{result.id}}" method="get"      style="color: rgb(50, 45, 45)">
+                    <i class="fas fa-edit"></i> edit
+                  </a>
+              </button>  
+              <button class="btn-danger mr-1" style="border-radius: 10px; color: white;" data-toggle="modal" data-whatever="@getbootstrap">
+                <a href="http://localhost:8000/DeleteResult/{{molecule.CAS_Number}}" method="post" style="color: white">
+                <i class="far fa-trash-alt"></i> delete
+                </a>
+              </button>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+        
       </div>
-      </div>
+    
 
 <footer class="my-5 pt-5 text-muted text-center text-small">
     <p class="mb-1">&copy; 2022-2023 Insight BioSolutions</p>

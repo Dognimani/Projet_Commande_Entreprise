@@ -38,24 +38,24 @@
   <div class="py-2 text-center">
     <img class="d-block mx-auto mb-4" src="./../static/logo-IBSF.png"  width="120" height="120">
     
-    <h2 style="color: rgb(0, 83, 159)">Register a result</h2>
+    <h2 style="color: rgb(0, 83, 159)">Result update</h2>
   </div>
   <!-- FORM  -->
   <div class="col-md-10 offset-1">
 
-      <!--TOXICOLOGICAL PROFILE section -->
       <div class="card card-primary card-outline mt-5">
         <div class="card-header" style="background-color: rgb(0, 83, 159); color: white;">
-          <h3 class="card-title m-0">TOXICOLOGICAL PROFILE</h3>
+          <h3 class="card-title m-0">{{result.Toxicity_Type}}</h3>
         </div>
         <div class="card-body">
 
-          <form action="http://localhost:8000/ResultCreate/" method="post">
+          <form action="http://localhost:8000/ResultUpdate/{{result.id}}" method="post">
               <div class="row  mt-4 mb-2">
                 <div class="col-md-4 mb-3 offset-md-1">
                   <div class="form-group">
                     <label for="exampleFormControlSelect1">CAS_Number of the molecule</label>
-                    <select class="form-control" id="CAS_Number" name="CAS_Number">
+                    <select class="form-control" id="CAS_Number" name="CAS_Number" value="{{result.CAS_Number}}">
+                      <option>{{result.CAS_Number}}</option>
                       {% for molecule in molecules %}
                       <option>{{molecule.CAS_Number}}</option>
                       {% endfor %}
@@ -65,8 +65,8 @@
                 <div class="col-md-4 mb-3 offset-md-1">
                   <div class="form-group">
                     <label for="exampleFormControlSelect1">Result type</label>
-                    <select class="form-control" id="Toxicity_Type" name="Toxicity_Type" required>
-                      <option>Acute oral toxicity</option>
+                    <select class="form-control" id="Toxicity_Type" name="Toxicity_Type"  required>
+                      <option>{{result.Toxicity_Type}}</option>
                       <option>Acute dermal toxicity</option>
                       <option>Skin irritation</option>
                       <option>Eye irritation </option>
@@ -82,20 +82,20 @@
                   </div>
                 </div>
               </div>
-              <!--prémière ligne -->
+
               <div class="row  mt-4 mb-2">
                 <div class="col-md-8 mb-3 offset-md-2">
                   <div class="form-group">
                     <label for="AcuteOralToxicity">Result</label>
-                    <textarea class="form-control" rows="10"  name="value" placeholder="Write the result here"></textarea>
+                    <textarea class="form-control" rows="10"  name="value" >{{result.value}}</textarea>
                   </div>
                 </div>
               </div>
-
               <div class="row  mt-4 mb-2">
+                {% if result.safe_or_not =="safe" %}
                 <div class="col-md-2 mt-5 offset-md-2 ">
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="safe_or_not" id="safe_or_not" value="safe">
+                    <input class="form-check-input" type="radio" name="safe_or_not" id="safe_or_not" value="safe" checked>
                     <label class="form-check-label" for="inlineRadio1">Safe</label>
                   </div>
                   <div class="form-check form-check-inline">
@@ -103,28 +103,28 @@
                     <label class="form-check-label" for="inlineRadio2">Not Safe</label>
                   </div>
                 </div>
+                {% else %}
+                <div class="col-md-2 mt-5 offset-md-2 ">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="safe_or_not" id="safe_or_not" value="safe" >
+                      <label class="form-check-label" for="inlineRadio1">Safe</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="safe_or_not" id="safe_or_not" value="not_safe" checked>
+                      <label class="form-check-label" for="inlineRadio2">Not Safe</label>
+                    </div>
+                  </div>
+                {% endif %}  
+
                 <div class="col-md-6 mb-4 ">
                   <div class="form-group">
                     <label for="AcuteOralToxicity"> Comments</label>
-                    <textarea class="form-control" name="comment" rows="7" placeholder="Write your comments here" required></textarea>
+                    <textarea class="form-control" name="comment" rows="7"  required>{{result.comment}}</textarea>
                   </div>
                 </div>
 
               </div>
 
-              <!-- REFERENCE section -->
-              <div class="card card-primary card-outline mt-5">
-                <div class="card-header" style="background-color: rgb(0, 83, 159); color: white;">
-                  <h3 class="card-title m-0">REFERENCE</h3>
-                </div>
-                <div class="card-body">
-                  <div class="controls">
-                    <a href="##" id="add_references"><i class="fa fa-plus"></i>Add a Reference</a>
-                  </div>
-                  <div class="inp-group">
-                  </div>
-                </div>
-              </div>
               <!-- submit button -->
               <td>
                 <button type="submit" style="background-color: rgb(0, 83, 159); color: white; text-align: center;"
@@ -156,71 +156,7 @@
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
   <script src="./../static/bootstrap.min.js"></script>
-
-
-  <script>
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
-    (function () {
-      'use strict';
-
-      window.addEventListener('load', function () {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.getElementsByClassName('needs-validation');
-
-        // Loop over them and prevent submission
-        var validation = Array.prototype.filter.call(forms, function (form) {
-          form.addEventListener('submit', function (event) {
-            if (form.checkValidity() === false) {
-              event.preventDefault();
-              event.stopPropagation();
-            }
-            form.classList.add('was-validated');
-          }, false);
-        });
-      }, false);
-    })();
-
-  //================Add or Remove references : Dynamic input fields==================//
-  const add_references = document.getElementById('add_references');
-  // const remove_references = document.getElementById('remove_references');
-
-  const input = document.querySelector(".inp-group");
-
-  add_references.addEventListener("click", addReference);
-
-  //Remove References
-  function removeReference() {
-    this.parentElement.remove();
-  }
-
-  //Add References
-  function addReference() {
-    const reference_number = document.createElement('input');
-    reference_number.type = "number";
-    reference_number.className = "reference_number";
-    reference_number.placeholder = "Add a reference number";
-
-    const reference = document.createElement("input");
-    reference.type = "text";
-    reference.className = "reference";
-    reference.placeholder = "Add an article or URL";
-
-    const remove_reference = document.createElement("a");
-    remove_reference.className = "remove_reference";
-    remove_reference.innerHTML = "<span style='color: #fff'>&times</span>";
-
-    remove_reference.addEventListener("click", removeReference);
-
-    const flex = document.createElement("div");
-    flex.className = "flex";
-
-    input.appendChild(flex);
-    flex.appendChild(reference_number);
-    flex.appendChild(reference);
-    flex.appendChild(remove_reference);
-  }
-
-  </script>
+  
 
 </body>
 

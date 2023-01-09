@@ -1,0 +1,7 @@
+uvicorn fastapi
+#pymsql
+#sqlalchemy
+#python-multipart
+#psycopg2
+#pydantic[email]
+#jinja2

@@ -18,7 +18,6 @@
 </head>
 
 <body>
-
     <div class="login">
         <div class="display">
             <img class="d-block mx-auto mb-4" src="./../static/logo-IBSF.png" width="120" height="120">
@@ -26,6 +25,34 @@
             <h1 class="text-center">Please sign in</h1>
         </div>
 
+        {% if message !="" %}
+        <div class="modal fade" id="modal-success">
+            <div class="modal-dialog">
+              <div class="modal-content bg-success">
+                <div class="modal-header">
+                  <h4 class="modal-title">Success Modal</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>One fine body&hellip;</p>
+                </div>
+                <div class="modal-footer justify-content-between">
+                  <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-outline-light">Save changes</button>
+                </div>
+              </div>
+              <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+          </div>
+        
+        <div class="alert alert-warning alert-block" style="opacity: 0.5">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <span class="font-weight-bold"><strong>{{ message }}</strong></span>        
+        </div>
+        {% endif %}
         <form class="needs-validation" action="http://localhost:8000/UserAuthentification/" method="post">
 
             <div class="form-group is-validated">

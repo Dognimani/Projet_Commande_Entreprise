@@ -155,7 +155,9 @@ async def update(
 @router.get('/MoleculeDetails/{CAS_Number}', response_class=HTMLResponse)
 async def GetMoleculeDetails(request:Request,CAS_Number:str,db:Session=Depends(get_db)):
     molecule=db.query(Molecule).filter(Molecule.CAS_Number==CAS_Number).first()
-    return templates.TemplateResponse("MoleculeDetails.html", {"request": request,"molecule":molecule})  
+    resultats_associes=db.query(Result).filter(Result.CAS_Number==CAS_Number)
+    print(resultats_associes)
+    return templates.TemplateResponse("MoleculeDetails.html", {"request": request,"molecule":molecule,"resultats_associes":resultats_associes})  
 
 
 @router.get('/DeleteMolecule/{CAS_Number}', response_class=HTMLResponse)
@@ -205,14 +207,23 @@ async def create(
     Lastname:str = Form(),
     Email:str = Form(),
     Password:str = Form(),
+    repeat_password:str = Form(),
     db:Session=Depends(get_db)
     ):
-    user = User(Firstname = Firstname, Lastname = Lastname,Email=Email, Password=Password)
-    db.add(user)
-    db.commit()
-    db.refresh
-    molecules=db.query(Molecule).offset(0).limit(4).all()
-    return templates.TemplateResponse("List.html", {"request": request,"molecules":molecules})  
+        
+    exist=db.query(User).filter(User.Email==Email).first()
+    if exist:
+        return templates.TemplateResponse("Register.html", {"request": request,"message":"this email is already used"})
+    elif Password !=repeat_password :
+         return templates.TemplateResponse("Register.html", {"request": request,"message":"password and repeat password must be the same"})
+    else:
+        user = User(Firstname = Firstname, Lastname = Lastname,Email=Email, Password=Password)
+        db.add(user)
+        db.commit()
+        db.refresh
+        molecules=db.query(Molecule).offset(0).limit(4).all()
+        return templates.TemplateResponse("List.html", {"request": request,"molecules":molecules})
+
 
 @router.post('/UserAuthentification/',response_class=HTMLResponse)
 async def UserAuthentification(
@@ -221,12 +232,13 @@ async def UserAuthentification(
     Password:str = Form(),
     db:Session=Depends(get_db)
     ):
-    _user=db.query(User).filter(User.Password==Password).first()
-    if _user:
+    _user=db.query(User).filter(User.Email==Email).first()
+    if _user and _user.Password==Password:
         molecules=db.query(Molecule).offset(0).limit(4).all()
         return templates.TemplateResponse("List.html", {"request": request,"molecules":molecules})
     else:
-        return templates.TemplateResponse("authentication.html", {"request": request})  
+        message="this user doesn't exist. please sign in !"
+        return templates.TemplateResponse("authentication.html", {"request": request,"message":message})  
 
 
 #result part
@@ -260,3 +272,37 @@ async def ResultCreate(
     db.refresh(result)
     molecules=db.query(Molecule).all()
     return templates.TemplateResponse("ToxicologicalProfil.html", {"request": request,"molecules":molecules})    
+
+@router.get('/ResultDetails/{id}', response_class=HTMLResponse)
+async def delete(request:Request,id:str,db:Session=Depends(get_db)):    
+    result=db.query(Result).filter(Result.id==id).first()
+    return templates.TemplateResponse("ResultDetails.html", {"request": request,"result":result})  
+
+@router.get('/GetResultToUpdate/{id}', response_class=HTMLResponse)
+async def delete(request:Request,id:str,db:Session=Depends(get_db)):    
+    result=db.query(Result).filter(Result.id==id).first()
+    molecules=db.query(Molecule).all()
+    return templates.TemplateResponse("ResultUpdate.html", {"request": request,"result":result,"molecules":molecules})  
+
+@router.post('/ResultUpdate/{id}')
+async def update(
+    request:Request,
+    id:int,
+    CAS_Number:str=Form(),
+    Toxicity_Type:str=Form(),
+    value:str=Form(),
+    safe_or_not:str=Form(),
+    comment:str=Form(), 
+    db:Session=Depends(get_db)
+):
+    result=db.query(Result).filter(Result.id==id).first()
+
+    result.CAS_Number =CAS_Number,
+    result.Toxicity_Type = Toxicity_Type,
+    result.value = value,
+    result.safe_or_not =safe_or_not,           
+    result.comment =comment,           
+    db.commit()
+    db.refresh(result) 
+    molecules=db.query(Molecule).offset(0).limit(4).all()
+    return templates.TemplateResponse("List.html", {"request": request,"molecules":molecules})      
