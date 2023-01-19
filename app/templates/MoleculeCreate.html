@@ -41,6 +41,34 @@
     <h2 style="color: rgb(0, 83, 159)">Checkout form</h2>
   </div>
   <!-- FORM  -->
+  {% if message !="" %}
+  <div class="modal fade" id="modal-success">
+      <div class="modal-dialog">
+        <div class="modal-content bg-success">
+          <div class="modal-header">
+            <h4 class="modal-title">Success Modal</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>One fine body&hellip;</p>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-outline-light">Save changes</button>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+  
+  <div class="alert alert-warning alert-block" style="opacity: 0.5">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <span class="font-weight-bold"><strong>{{ message }}</strong></span>        
+  </div>
+  {% endif %}
   <div class="col-md-10 offset-1">
     <form action="http://localhost:8000/MoleculeCreate/" method="post">
       <!-- Component identification section-->
@@ -90,7 +118,7 @@
           <div class="row  mt-4 mb-2">
             <div class="col-md-4 mb-3">
               <label for="MolecularWeight">Molecular Weight</label>
-              <input name="Molecular_Weight" type="number" class="form-control" id="MolecularWeight" placeholder="MolecularWeight" required>
+              <input name="Molecular_Weight" type="number" step="any" min="0" class="form-control" id="MolecularWeight" placeholder="MolecularWeight" required>
               <div class="invalid-feedback">
                 Please enter the Molecular Weight.
               </div>

@@ -17,13 +17,18 @@
         border: 1px solid black;
         padding: 10px;
         }
-      </style>
+        .row{
+            display: flex;
+        }
+        .col-md-4{
+            flex: 1;
+        }
+    </style>
     <!-- Bootstrap CSS -->
     <link  href="css2/bootstrap.min.css" rel="stylesheet" >
     <link  href="band.css" rel="stylesheet" >
     <script src="https://kit.fontawesome.com/45e38e596f.js" crossorigin="anonymous"></script>
-
-    <title>View Molecule :  nom.... </title>
+<title>View Molecule :  nom.... </title>
   </head>
     <body>
 <!-- Component identification section-->   
@@ -36,138 +41,137 @@
             <div class="col-md-4 mb-3">
                 <h4>{{molecule.Name}}</h4>
             </div>
-              
-            <div class="col-md-4 mb-3">
-                <h4> {{molecule.CAS_Number}}</h4>
-            </div>
+        <div class="col-md-4 mb-3">
+            <h4> {{molecule.CAS_Number}}</h4>
+        </div>
 
-            <div class="col-md-4 mb-3">
-                <h4> {{molecule.Canonical_Formula}}</h4>
-            </div>
-      </div>
-    </div>
-        <!--Physical and chemical properties-->
-        <div class="row  mt-4 mb-2">
-            <div class="col-md-3 ml-5 mb-3">
-                <h5> Molecular Weight : 116.8</h5>
-            </div>
-            <div class="col-md-3 ml-5 mb-3">
-                <h5>  XLogP3 : 1.8</h5>
-            </div>
-            <div class="col-md-3 ml-5 mb-3">
-                <h5>  Hydrogen Bond Donor Coun : 0</h5>
-            </div>
+        <div class="col-md-4 mb-3">
+            <h4> {{molecule.Canonical_Formula}}</h4>
         </div>
-        <div class="row  mt-4 mb-2">
-            <div class="col-md-3 ml-5 mb-3">
-                <h5> Hydrogen Bond Acceptor Count : 0 </h5>
-            </div>
-            <div class="col-md-3 ml-5 mb-3">
-                <h5>   Rotatable Bond Count : 0 </h5>
-            </div>
-            <div class="col-md-3 ml-5 mb-3">
-                <h5>- Exact Mass : 116.083729621 </h5>
-            </div>
-        </div>
-        <div class="row  mt-4 mb-2">
-            <div class="col-md-3 ml-5 mb-3">
-                <h5> Monoisotopic Mass : 116.083729621 </h5>
-            </div>
-            <div class="col-md-3 ml-5 mb-3">
-                <h5>   Topological Polar Surface Area : 26.3 Å² </h5>
-            </div>
-            <div class="col-md-3 ml-5 mb-3">
-                <h5>Heavy Atom Count : 8</h5>
-            </div>
-        </div>
-        <div class="row  mt-4 mb-2">
-            <div class="col-md-3 ml-5 mb-3">
-                <h5> Formal Charge : 0</h5>
-            </div>
-            <div class="col-md-3 ml-5 mb-3">
-                <h5>   Complexity : 68.9</h5>
-            </div>
-            <div class="col-md-3 ml-5 mb-3">
-                <h5>Isotope Atom Count : 0</h5>
-            </div>
-        </div>
-        <div class="row  mt-4 mb-2">
-            <div class="col-md-3 ml-5 mb-3">
-                <h5>Defined Atom Stereocenter Count : 0</h5>
-            </div>
-            <div class="col-md-3 ml-5 mb-3">
-                <h5>   Undefined Atom Stereocenter Count : 0</h5>
-            </div>
-            <div class="col-md-3 ml-5 mb-3">
-                <h5>Defined Bond Stereocenter Count :0</h5>
-            </div>
-        </div>
-        <div class="row  mt-4 mb-2">
-            <div class="col-md-3 ml-5 mb-3">
-                <h5>Undefined Bond Stereocenter Count : 0</h5>
-            </div>
-            <div class="col-md-3 ml-5 mb-3">
-                <h5>   Covalently-Bonded Unit Count : 1 </h5>
-            </div>
-            <div class="col-md-3 ml-5 mb-3">
-                <h5>Compound Is Canonicalized : Yes</h5>
-            </div>
-        </div>
-    <!--Toxicological profile-->
-    <h4 style="margin:2% 0px 2% 1%"> TOXICOLOGICAL PROFILE : BUTYL ACETATE</h4>
-
-<div style="margin-left:1%; margin-right: 1%; margin-right: 1%;">
-    <table>
-        <thead >
-          <tr>
-            <th class="m-e-t" style=" text-align:center; width:15%;">TYPE OF STUDY</th>
-            <th class="m-e-t" style=" text-align:center;" >RESULTS</th>
-            <th class="m-e-t" style=" text-align:center; width:15%;">REFERENCES</th>
-          </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="m-e-t"> Acute toxicity </td>     
-                <td class="m-e-t">Acute toxic effect: central nervous system (CNS) depressed, signs
-                                  of eye irritation and respiratory ways observed by inhalation</td>     
-                <td class="m-e-t"> [1, 3]</td>     
-            </tr>
-            <tr>
-                <td class="m-e-t"> Acute oral toxicity </td>     
-                <td class="m-e-t">
-                    LD50 (rat, oral route) > 10 000 mg/kg 
-                    LD50 (rabbits, oral route) > 3 000 mg/kg 
-                    LD50 (mouse, oral route) = 7 100 mg/kg
-                    LD50 (guinea pig, oral route) = 4 200 mg/kg
-                    After exposure to non-lethal doses: weakness and ataxia and from 6400 mg/kg, unconsciousness 
-
-                    LD50 (rat, oral route) = 14 130 mg/kg
-                    LD50 (guinea pig, oral route ) = 4 700 mg/kg
-                    LD50 (mice, oral route) = 6 000 mg/kg
-                    LD50 (rabbits, oral route) = 3 200 mg/kg 
-                    LD50 (rat, oral route) = 10 768 mg/kg
-                </td>     
-                <td class="m-e-t"> [1, 5, 7]</td>     
-            </tr>
-            <tr>
-                <td class="m-e-t"> Acute dermal toxicity</td>     
-                <td class="m-e-t">
-                    LD50 (rabbits, cutaneous route) > 5000 – 14 100 – 17 600 mg/kg according authors
-                </td>     
-                <td class="m-e-t"> [1, 7]</td>     
-            </tr>
-            <tr>
-                <td class="m-e-t"> Acute toxicity by other route</td>     
-                <td class="m-e-t">
-                    LC50 (rat, inhalation route) = 0.74 mg/l (equivalent to 160 ppm) to 38 mg/l 
-                    Sever irritating effects from 0.8 mg/l during 4h: hemorrhage, hyperemic lungs, vascular emphysema
-
-                </td>     
-                <td class="m-e-t"> [1]</td>     
-            </tr>
-        </tbody>  
-      </table>
-</div>
   </div>
+</div>
+    <!--Physical and chemical properties-->
+    <div class="row  mt-4 mb-2">
+        <div class="col-md-4 mb-3">
+            <h5> Molecular Weight : 116.8</h5>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>  XLogP3 : 1.8</h5>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>  Hydrogen Bond Donor Coun : 0</h5>
+        </div>
+    </div>
+    <div class="row  mt-4 mb-2">
+        <div class="col-md-4 mb-3">
+            <h5> Hydrogen Bond Acceptor Count : 0 </h5>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>   Rotatable Bond Count : 0 </h5>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>- Exact Mass : 116.083729621 </h5>
+        </div>
+    </div>
+    <div class="row  mt-4 mb-2">
+        <div class="col-md-4 mb-3">
+            <h5> Monoisotopic Mass : 116.083729621</h5>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>   Topological Polar Surface Area : 26.3 Å² </h5>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Heavy Atom Count : 8</h5>
+        </div>
+    </div>
+    <div class="row  mt-4 mb-2">
+        <div class="col-md-4 mb-3">
+            <h5> Formal Charge : 0 </h5>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>   Complexity : 68.9            </h5>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Isotope Atom Count : 0  </h5>
+        </div>
+    </div>
+    <div class="row  mt-4 mb-2">
+        <div class="col-md-4 mb-3">
+            <h5> Defined Atom Stereocenter Count : 0            </h5>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>   Undefined Atom Stereocenter Count : 0            </h5>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Defined Bond Stereocenter Count :0  </h5>
+        </div>
+    </div>
+
+    <div class="row  mt-4 mb-2">
+        <div class="col-md-4 mb-3">
+            <h5> Undefined Bond Stereocenter Count : 0           </h5>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>   Covalently-Bonded Unit Count : 1           </h5>
+        </div>
+        <div class="col-md-4 mb-3">
+            <h5>Compound Is Canonicalized : Yes  </h5>
+        </div>
+    </div>
+       <!--Toxicological profile-->
+       <h4 style="margin:2% 0px 2% 1%"> TOXICOLOGICAL PROFILE : BUTYL ACETATE</h4>
+
+       <div style="margin-left:1%; margin-right: 1%; margin-right: 1%;">
+           <table>
+               <thead >
+                 <tr>
+                   <th class="m-e-t" style=" text-align:center; width:15%;">TYPE OF STUDY</th>
+                   <th class="m-e-t" style=" text-align:center;" >RESULTS</th>
+                   <th class="m-e-t" style=" text-align:center; width:15%;">REFERENCES</th>
+                 </tr>
+               </thead>
+               <tbody>
+                   <tr>
+                       <td class="m-e-t"> Acute toxicity </td>     
+                       <td class="m-e-t">Acute toxic effect: central nervous system (CNS) depressed, signs
+                                         of eye irritation and respiratory ways observed by inhalation</td>     
+                       <td class="m-e-t"> [1, 3]</td>     
+                   </tr>
+                   <tr>
+                       <td class="m-e-t"> Acute oral toxicity </td>     
+                       <td class="m-e-t">
+                           LD50 (rat, oral route) > 10 000 mg/kg 
+                           LD50 (rabbits, oral route) > 3 000 mg/kg 
+                           LD50 (mouse, oral route) = 7 100 mg/kg
+                           LD50 (guinea pig, oral route) = 4 200 mg/kg
+                           After exposure to non-lethal doses: weakness and ataxia and from 6400 mg/kg, unconsciousness 
+       
+                           LD50 (rat, oral route) = 14 130 mg/kg
+                           LD50 (guinea pig, oral route ) = 4 700 mg/kg
+                           LD50 (mice, oral route) = 6 000 mg/kg
+                           LD50 (rabbits, oral route) = 3 200 mg/kg 
+                           LD50 (rat, oral route) = 10 768 mg/kg
+                       </td>     
+                       <td class="m-e-t"> [1, 5, 7]</td>     
+                   </tr>
+                   <tr>
+                       <td class="m-e-t"> Acute dermal toxicity</td>     
+                       <td class="m-e-t">
+                           LD50 (rabbits, cutaneous route) > 5000 – 14 100 – 17 600 mg/kg according authors
+                       </td>     
+                       <td class="m-e-t"> [1, 7]</td>     
+                   </tr>
+                   <tr>
+                       <td class="m-e-t"> Acute toxicity by other route</td>     
+                       <td class="m-e-t">
+                           LC50 (rat, inhalation route) = 0.74 mg/l (equivalent to 160 ppm) to 38 mg/l 
+                           Sever irritating effects from 0.8 mg/l during 4h: hemorrhage, hyperemic lungs, vascular emphysema
+                       </td>     
+                       <td class="m-e-t"> [1]</td>     
+                   </tr>
+               </tbody>  
+             </table>
+</div>
+    </div>
     </body>
    </html>

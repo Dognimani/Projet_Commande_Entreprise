@@ -50,16 +50,44 @@
         </div>
         <div class="card-body">
 
+          {% if message !="" %}
+              <div class="modal fade" id="modal-success">
+                  <div class="modal-dialog">
+                    <div class="modal-content bg-success">
+                      <div class="modal-header">
+                        <h4 class="modal-title">Success Modal</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <p>One fine body&hellip;</p>
+                      </div>
+                      <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-outline-light" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-outline-light">Save changes</button>
+                      </div>
+                    </div>
+                    <!-- /.modal-content -->
+                  </div>
+                  <!-- /.modal-dialog -->
+                </div>
+  
+                <div class="alert alert-warning alert-block" style="opacity: 0.5">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <span class="font-weight-bold"><strong>{{ message }}</strong></span>        
+                </div>
+            {% endif %}
+
           <form action="http://localhost:8000/ResultCreate/" method="post">
               <div class="row  mt-4 mb-2">
                 <div class="col-md-4 mb-3 offset-md-1">
                   <div class="form-group">
                     <label for="exampleFormControlSelect1">CAS_Number of the molecule</label>
                     <select class="form-control" id="CAS_Number" name="CAS_Number">
-                      {% for molecule in molecules %}
-                      <option>{{molecule.CAS_Number}}</option>
-                      {% endfor %}
+                      <option>{{CAS_Number}}</option>
                     </select>
+                    <!-- <input type="text" class="form-control" id="CAS_Number" name="CAS_Number" value="{{CAS_Number}}" disabled required> -->
                   </div>
                 </div>
                 <div class="col-md-4 mb-3 offset-md-1">
@@ -70,14 +98,25 @@
                       <option>Acute dermal toxicity</option>
                       <option>Skin irritation</option>
                       <option>Eye irritation </option>
-                      <option>Repeated dose toxicity  </option>
+                      <option>Skin sensitisation </option>
+                      <option>Acute toxicity by other route</option>
+                      <option>Repeated dose toxicity </option>
                       <option>Repeated dose toxicity (28 days) </option>
                       <option>Sub-chronic toxicity (90 days) </option>
+                      <option>Chronic toxicity (>12 months)</option>
+                      <option>Ames test</option>
+                      <option>Micronucleus test</option>Phototoxicity
+                      <option>Phototoxicity</option>
                       <option>Reprotoxicity / teratogenicity</option>
                       <option>Carcinogenicity</option>
-                      <option>Dermal/percutaneous absorption</option>
+                      <option>Dermal/percutaneous absorption</option>Impurity 
+                      <option>Impurity</option> 
+                      <option>Particle size</option> 
                       <option>MLA-TK</option>
-                      <option>Human data </option> 
+                      <option>Human data </option>
+                      <option>Toxicokinetics - Metabolism </option> 
+                      <option>Other</option> 
+                      <option>Other data</option> 
                     </select>
                   </div>
                 </div>

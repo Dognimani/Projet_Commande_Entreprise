@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String,Float,ForeignKey,DateTime, Boolean, Table
+from sqlalchemy import Column, Integer, String,Float,ForeignKey,DateTime, Boolean, Table,Text
 from config import Base, engine
 from sqlalchemy.orm import relationship
 import datetime
@@ -34,9 +34,9 @@ class Result(Base):
     __tablename__ ='results'
     id=Column(Integer,primary_key=True)
     Toxicity_Type=Column(String(255))
-    value=Column(String(255)) # pas sûr que ce soit String(255) mais plutôt text
+    value=Column(Text) # pas sûr que ce soit String(255) mais plutôt text
     safe_or_not=Column(String(255))
-    comment=Column(String(255))
+    comment=Column(Text)
     CAS_Number=Column(String(255),ForeignKey("molecules.CAS_Number")) #  la clé étrangère
     Created_at=Column(DateTime, default= datetime.datetime.utcnow)
     molecules = relationship("Molecule",back_populates="results") # mapping de la clé étrangère venant de la table molécule
@@ -49,7 +49,7 @@ class Reference(Base):
     id=Column(Integer,primary_key=True)
     number=Column(Integer)
     Created_date=Column(DateTime, default= datetime.datetime.utcnow)
-    value=Column(String(255)) # pas sûr que ce soit String(255) mais plutôt text
+    value=Column(Text) # pas sûr que ce soit String(255) mais plutôt text
     results=relationship("Result", secondary="referencements", back_populates="references")
 
 # table Référencement
@@ -67,12 +67,5 @@ class User(Base):
     Password =Column(String(255))
     Created_at=Column(DateTime, default= datetime.datetime.utcnow)
 
-# class Resultat(Base):
-    # __tablename__ ='resultats'
-    # id=Column(Integer,primary_key=True)
-    # Toxicity_Type=Column(String(255))
-    # value=Column(String(255)) # pas sûr que ce soit String(255) mais plutôt text
-    # CAS_Number=Column(String(255))
-# Create the tables in the database
 Base.metadata.create_all(engine)
 
