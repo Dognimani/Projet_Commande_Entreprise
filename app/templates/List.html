@@ -94,20 +94,27 @@
                 data-whatever="@getbootstrap">
                 <a href="http://localhost:8000/MoleculeDetails/{{molecule.CAS_Number}}" method="get"
                   style="color: rgb(50, 45, 45)">
-                  <i class="far fa-eye"></i> details
+                  <i class="far fa-eye"></i> Details
+                </a>
+              </button>
+              <button class="btn-outline-primary mr-1" style="border-radius: 10px; color: white;" data-toggle="modal"
+                data-whatever="@getbootstrap">
+                <a href="http://localhost:8000/DownloadMolecule/{{molecule.CAS_Number}}" method="get"
+                  style="color: rgb(50, 45, 45)">
+                  <i class="fa fa-download"></i> Download
                 </a>
               </button>
               <button class=" btn-outline-warning mr-1" style="border-radius: 10px">
                 <a href="http://localhost:8000/GetMoleculeToUpdate/{{molecule.CAS_Number}}" method="get"
                   style="color: rgb(50, 45, 45)">
-                  <i class="fas fa-edit"></i> edit
+                  <i class="fas fa-edit"></i> Edit
                 </a>
               </button>
               <button class="btn-danger mr-1" style="border-radius: 10px; color: white;" data-toggle="modal"
                 data-whatever="@getbootstrap">
                 <a href="http://localhost:8000/DeleteMolecule/{{molecule.CAS_Number}}" method=""
                   style="color: white">
-                  <i class="far fa-trash-alt"></i> delete
+                  <i class="far fa-trash-alt"></i> Delete
                 </a>
               </button>
             </td>

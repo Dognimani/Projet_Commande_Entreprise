@@ -167,13 +167,17 @@ async def GetMoleculeDetails(request:Request,CAS_Number:str,db:Session=Depends(g
     return templates.TemplateResponse("MoleculeDetails.html", {"request": request,"molecule":molecule,"resultats_associes":resultats_associes})  
 
 
+@router.get('/DownloadMolecule/{CAS_Number}', response_class=HTMLResponse)
+async def get_molecule(request:Request,CAS_Number:str,db:Session=Depends(get_db)):
+
+    molecule=db.query(Molecule).filter(Molecule.CAS_Number==CAS_Number).first()
+    results_associated=db.query(Result).filter(Result.CAS_Number==CAS_Number)
+    return templates.TemplateResponse("DownloadMoleculeDetails.html", {"request": request,"molecule":molecule,"results_associated":results_associated})  
+
 @router.get('/DeleteMolecule/{CAS_Number}', response_class=HTMLResponse)
 async def delete(request:Request,CAS_Number:str,db:Session=Depends(get_db)):
-    
-    resules_liked=db.query(Result).filter(Result.CAS_Number==CAS_Number)
-    resules_liked.delete()
-    molecule=db.query(Molecule).filter(Molecule.CAS_Number==CAS_Number)
-    molecule.delete()
+    molecule=db.query(Molecule).filter(Molecule.CAS_Number==CAS_Number).first()
+    # molecule.delete()
     db.commit
     molecules=db.query(Molecule).all()
     return templates.TemplateResponse("List.html", {"request": request,"molecules":molecules})  

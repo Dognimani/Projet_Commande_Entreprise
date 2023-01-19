@@ -90,16 +90,16 @@
           <div class="row  mt-4 mb-2">
             <div class="col-md-4 mb-3">
               <label for="MolecularWeight">Molecular Weight</label>
-              <input name="Molecular_Weight" type="number" class="form-control" id="MolecularWeight"  value="{{molecule.Molecular_Weight}}">
+              <input name="Molecular_Weight" type="number" step="any" min="0" class="form-control" id="MolecularWeight"  value="{{molecule.Molecular_Weight}}">
             </div>
 
             <div class="col-md-4 mb-3">
               <label for="XLogP3">XLogP3</label>
-              <input name="XLogP3" type="number" class="form-control" id="XLogP3" placeholder="XLogP3" value="{{molecule.XLogP3}}">
+              <input name="XLogP3" type="number" step="any" min="0" class="form-control" id="XLogP3" placeholder="XLogP3" value="{{molecule.XLogP3}}">
             </div>
             <div class="col-md-4 mb-3">
               <label for="HydrogenBondDonorCount">Hydrogen Bond Donor Count</label>
-              <input name="HydrogenBondDonorCount" type="number" class="form-control" id="HydrogenBondDonorCount" value="{{molecule.HydrogenBondDonorCount}}">
+              <input name="HydrogenBondDonorCount" type="number" step="any" min="0" class="form-control" id="HydrogenBondDonorCount" value="{{molecule.HydrogenBondDonorCount}}">
             </div>
           </div>
 
@@ -107,15 +107,15 @@
           <div class="row  mt-4 mb-2">
             <div class="col-md-4 mb-3">
               <label for="HydrogenBondAcceptorCount">Hydrogen Bond Acceptor Count</label>
-              <input name="HydrogenBondAcceptorCount" type="number" class="form-control" id="HydrogenBondAcceptorCount" value="{{molecule.HydrogenBondAcceptorCount}}" >
+              <input name="HydrogenBondAcceptorCount" type="number" step="any" min="0" class="form-control" id="HydrogenBondAcceptorCount" value="{{molecule.HydrogenBondAcceptorCount}}" >
             </div>
             <div class="col-md-4 mb-3">
               <label for="Rotatable_Bond_Count">Rotatable Bond Count</label>
-              <input name="Rotatable_Bond_Count" type="number" class="form-control" id="Rotatable_Bond_Count" value="{{molecule.Rotatable_Bond_Count}}" >
+              <input name="Rotatable_Bond_Count" type="number" step="any" min="0" class="form-control" id="Rotatable_Bond_Count" value="{{molecule.Rotatable_Bond_Count}}" >
             </div>
             <div class="col-md-4 mb-3">
               <label for="ExactMass">Exact Mass</label>
-              <input name="ExactMass" type="number" class="form-control" id="ExactMass" value="{{molecule.ExactMass}}">
+              <input name="ExactMass" type="number" step="any" min="0" class="form-control" id="ExactMass" value="{{molecule.ExactMass}}">
             </div>
           </div>
 
@@ -123,17 +123,17 @@
           <div class="row  mt-4 mb-2">
             <div class="col-md-4 mb-3">
               <label for="MonoisotopicMass">Monoisotopic Mass</label>
-              <input name="MonoisotopicMass" type="number" class="form-control" id="MonoisotopicMass" value="{{molecule.MonoisotopicMass}}" >
+              <input name="MonoisotopicMass" type="number" step="any" min="0" class="form-control" id="MonoisotopicMass" value="{{molecule.MonoisotopicMass}}" >
             </div>
 
             <div class="col-md-4 mb-3">
               <label for="TopologicalPolarSurfaceArea">Topological Polar Surface Area</label>
-              <input name="TopologicalPolarSurfaceArea" type="number" class="form-control" id="TopologicalPolarSurfaceArea" value="{{molecule.TopologicalPolarSurfaceArea}}" >
+              <input name="TopologicalPolarSurfaceArea" type="number" step="any" min="0" class="form-control" id="TopologicalPolarSurfaceArea" value="{{molecule.TopologicalPolarSurfaceArea}}" >
             </div>
 
             <div class="col-md-4 mb-3">
               <label for="Heavy_Atom_Count">Heavy Atom Count</label>
-              <input name="Heavy_Atom_Count" type="number" class="form-control" id="Heavy_Atom_Count" value="{{molecule.Heavy_Atom_Count}}" >
+              <input name="Heavy_Atom_Count" type="number" step="any" min="0" class="form-control" id="Heavy_Atom_Count" value="{{molecule.Heavy_Atom_Count}}" >
             </div>
           </div>
 
@@ -141,17 +141,17 @@
           <div class="row  mt-4 mb-2">
             <div class="col-md-4 mb-3">
               <label for="Formal Charge">Formal Charge</label>
-              <input name="Formal_Charge" type="number" class="form-control" id="Formal_Charge" value="{{molecule.Formal_Charge}}" >
+              <input name="Formal_Charge" type="number" step="any" min="0" class="form-control" id="Formal_Charge" value="{{molecule.Formal_Charge}}" >
             </div>
 
             <div class="col-md-4 mb-3">
               <label for="Complexity">Complexity</label>
-              <input name="Complexity" type="number" class="form-control" id="Complexity" value="{{molecule.Complexity}}">
+              <input name="Complexity" type="number" step="any" min="0" class="form-control" id="Complexity" value="{{molecule.Complexity}}">
             </div>
 
             <div class="col-md-4 mb-3">
               <label for="Isotope_Atom_Count">Isotope Atom Count</label>
-              <input name="Isotope_Atom_Count" type="number" class="form-control" id="Isotope_Atom_Count" value="{{molecule.Isotope_Atom_Count}}" >
+              <input name="Isotope_Atom_Count" type="number" step="any" min="0" class="form-control" id="Isotope_Atom_Count" value="{{molecule.Isotope_Atom_Count}}" >
             </div>
           </div>
 
@@ -159,7 +159,7 @@
           <div class="row  mt-4 mb-2">
             <div class="col-md-4 mb-3">
               <label for="Undefined_Atom_Stereocenter_Count">Defined Atom Stereocenter Count</label>
-              <input name="Undefined_Atom_Stereocenter_Count" type="number" class="form-control" id="Undefined_Atom_Stereocenter_Count"  value="{{molecule.Undefined_Atom_Stereocenter_Count}}">
+              <input name="Undefined_Atom_Stereocenter_Count" type="number" step="any" min="0" class="form-control" id="Undefined_Atom_Stereocenter_Count"  value="{{molecule.Undefined_Atom_Stereocenter_Count}}">
               <div class="invalid-feedback">
                 Please enter Defined Atom Stereocenter Count.
               </div>
@@ -167,12 +167,12 @@
 
             <div class="col-md-4 mb-3">
               <label for="Undefined_Atom_Stereocenter_Count">Undefined Atom Stereocenter Count</label>
-              <input name="Undefined_Atom_Stereocenter_Count" type="number" class="form-control" id="Undefined_Atom_Stereocenter_Count"  value="{{molecule.Undefined_Atom_Stereocenter_Count}}" >
+              <input name="Undefined_Atom_Stereocenter_Count" type="number" step="any" min="0" class="form-control" id="Undefined_Atom_Stereocenter_Count"  value="{{molecule.Undefined_Atom_Stereocenter_Count}}" >
             </div>
 
             <div class="col-md-4 mb-3">
               <label for="Defined_Bond_Stereocenter_Count">Defined Bond Stereocenter Count</label>
-              <input name="Defined_Bond_Stereocenter_Count" type="number" class="form-control" id="Defined_Bond_Stereocenter_Count"  value="{{molecule.Defined_Bond_Stereocenter_Count}}">
+              <input name="Defined_Bond_Stereocenter_Count" type="number" step="any" min="0" class="form-control" id="Defined_Bond_Stereocenter_Count"  value="{{molecule.Defined_Bond_Stereocenter_Count}}">
             </div>
           </div>
 
@@ -180,12 +180,12 @@
           <div class="row  mt-4 mb-2">
             <div class="col-md-4 mb-3">
               <label for="Undefined_Bond_Stereocenter_Count">Undefined Bond Stereocenter Count</label>
-              <input name="Undefined_Bond_Stereocenter_Count" type="number" class="form-control" id="Undefined_Bond_Stereocenter_Count" value="{{molecule.Undefined_Bond_Stereocenter_Count}}" >
+              <input name="Undefined_Bond_Stereocenter_Count" type="number" step="any" min="0" class="form-control" id="Undefined_Bond_Stereocenter_Count" value="{{molecule.Undefined_Bond_Stereocenter_Count}}" >
             </div>
 
             <div class="col-md-4 mb-3">
               <label for="Covalently_Bonded_Unit_Count">Covalently-Bonded Unit Count</label>
-              <input name="Covalently_Bonded_Unit_Count" type="number" class="form-control" id="Covalently-Bonded Unit Count"  value="{{molecule.Covalently_Bonded_Unit_Count}}">
+              <input name="Covalently_Bonded_Unit_Count" type="number" step="any" min="0" class="form-control" id="Covalently-Bonded Unit Count"  value="{{molecule.Covalently_Bonded_Unit_Count}}">
             </div>
             <div class="col-md-4">
               <h class="mb-3">Compound Is Canonicalized</b>
